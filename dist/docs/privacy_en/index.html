@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/hakoniwa_link_icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy policy for Hakoniwa Link (hknw.link). Information collection, retention, and data handling.">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy | HAKONIWA Link</title>
+  <style>
+ /* ============================================================
+   個別ドキュメントページ用スタイル
+   - 利用規約、プライバシーポリシーなどの本文表示用
+   ============================================================ */
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベース設定 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.7;  /* 読みやすい行間 */
+}
+
+/* ========== ヘッダー（共通） ========== */
+.site-header {
+  background: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ロゴエリア */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ナビゲーションリンク */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* ========== メインコンテンツエリア ========== */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* コンテンツカード（白背景 + ボーダー） */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8ec;
+  overflow: hidden;
+}
+
+/* ========== パンくずリスト ========== */
+.breadcrumb {
+  padding: 1rem 2rem;
+  background: #fafafc;
+  border-bottom: 1px solid #e8e8ec;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #2c2c2e;
+  text-decoration: underline;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+/* ========== 戻るリンク ========== */
+.back-link {
+  padding: 1rem 2rem 0 2rem;
+}
+
+.back-link a {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.back-link a:hover {
+  color: #2c2c2e;
+}
+
+/* ========== 本文コンテンツ ========== */
+.content {
+  padding: 2rem;
+}
+
+/* 見出し */
+.content h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 1.5rem 0 0.75rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid #2c2c2e;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2e;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3a3a3e;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* 段落 */
+.content p {
+  margin-bottom: 1rem;
+  color: #3a3a3e;
+  line-height: 1.7;
+}
+
+/* リスト */
+.content ul,
+.content ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.25rem;
+  color: #3a3a3e;
+}
+
+/* 引用ブロック */
+.content blockquote {
+  background: #f8f8fa;
+  border-left: 3px solid #2c2c2e;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* インラインコード */
+.content code {
+  background: #f0f0f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+/* コードブロック */
+.content pre {
+  background: #1e1e2e;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.content pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+/* テーブル */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border: 1px solid #e8e8ec;
+}
+
+.content th {
+  background: #f8f8fa;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.content tr:last-child td {
+  border-bottom: none;
+}
+
+/* 水平線 */
+.content hr {
+  margin: 1.5rem 0;
+  border: none;
+  height: 1px;
+  background: #e8e8ec;
+}
+
+/* リンク */
+.content a {
+  color: #2c2c2e;
+  text-decoration: none;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.content a:hover {
+  border-bottom-color: #2c2c2e;
+}
+
+/* ========== 関連ドキュメント ========== */
+.related {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8e8ec;
+}
+
+.related-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.related-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #f0f0f4;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #3a3a3e;
+  transition: background 0.2s;
+}
+
+.related-link:hover {
+  background: #e8e8ec;
+  border-bottom: none;
+}
+
+/* ========== 更新日表示 ========== */
+.updated {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: right;
+  border-top: 1px solid #e8e8ec;
+}
+
+/* ========== フッター ========== */
+.site-footer {
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #2c2c2e;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ========== ダークモード対応 ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a2e;
+  }
+
+  .content-card {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+  }
+
+  .breadcrumb {
+    background: #25253a;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .breadcrumb a {
+    color: #a0aec0;
+  }
+
+  .breadcrumb a:hover {
+    color: #e2e8f0;
+  }
+
+  .content h1 {
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content h2 {
+    color: #e2e8f0;
+    border-left-color: #a0aec0;
+  }
+
+  .content h3 {
+    color: #cbd5e0;
+  }
+
+  .content p,
+  .content li {
+    color: #cbd5e0;
+  }
+
+  .content blockquote {
+    background: #25253a;
+    color: #a0aec0;
+  }
+
+  .content code {
+    background: #25253a;
+    color: #fc8181;
+  }
+
+  .content table {
+    border-color: #3a3a5a;
+  }
+
+  .content th {
+    background: #25253a;
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content td {
+    border-bottom-color: #3a3a5a;
+    color: #cbd5e0;
+  }
+
+  .content hr {
+    background: #3a3a5a;
+  }
+
+  .content a {
+    color: #a0aec0;
+    border-bottom-color: #4a5568;
+  }
+
+  .content a:hover {
+    border-bottom-color: #a0aec0;
+  }
+
+  .related {
+    border-top-color: #3a3a5a;
+  }
+
+  .related-title {
+    color: #888;
+  }
+
+  .related-link {
+    background: #25253a;
+    color: #cbd5e0;
+  }
+
+  .related-link:hover {
+    background: #3a3a5a;
+  }
+
+  .updated {
+    border-top-color: #3a3a5a;
+    color: #666;
+  }
+
+  .site-footer {
+    border-top-color: #3a3a5a;
+    background: #1a1a2e;
+  }
+
+  .footer-links a:hover {
+    color: #e2e8f0;
+  }
+
+  .back-link a {
+    color: #888;
+  }
+
+  .back-link a:hover {
+    color: #e2e8f0;
+  }
+}
+
+/* ========== レスポンシブ対応（スマホ） ========== */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .breadcrumb {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .back-link {
+    padding: 0.75rem 1.25rem 0 1.25rem;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .related-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .related-link {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ========== 印刷用スタイル ========== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .site-header,
+  .breadcrumb,
+  .back-link,
+  .related,
+  .site-footer {
+    display: none;
+  }
+
+  .content-card {
+    border: none;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .content a {
+    color: black;
+    border-bottom: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/">
+          <div class="logo-icon-wrapper">
+            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">HAKONIWA Link</span>
+            <span class="logo-sub">URL Shortener</span>
+          </div>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">📚 ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link">🔗 サービス</a>
+        <a href="#準備中-git" target="_blank" class="nav-link">🐙 GitHub(準備中)</a>
+        <a href="#準備中-discord" target="_blank" class="nav-link discord">💬 Discord(準備中) </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main">
+    <div class="content-card">
+      
+    <div class="breadcrumb">
+      <a href="/">ホーム</a>
+      <span class="separator">›</span>
+      <a href="/docs">ドキュメント</a>
+      <span class="separator">›</span>
+      <span>Privacy Policy</span>
+    </div>
+  
+      
+    <div class="back-link">
+      <a href="/">← ドキュメント一覧に戻る</a>
+    </div>
+  
+      <div class="content">
+        <h1>Hakoniwa Link (hknw.link) Privacy Policy</h1>
+
+<p><a href="/jp/privacy" target="_blank" rel="noopener noreferrer">日本語はこちら</a></p>
+
+<h2>Operator</h2>
+HAKONIWA Studio
+
+<hr>
+
+<h2>Article 1: Basic Policy</h2>
+
+<p>HAKONIWA Studio (hereinafter referred to as "we," "us," or "our") respects the privacy of users who generate shortened URLs (hereinafter referred to as "Users") and third parties who click on shortened URLs (hereinafter referred to as "End Users") of our URL shortening service "hknw.link" (hereinafter referred to as "the Service"). Our fundamental policy is to <strong>keep personally identifiable information to the absolute minimum necessary</strong>.</p>
+
+<p>Based on the concept of <strong>"Privacy by Design,"</strong> the Service collects information only to the extent necessary for the provision of the Service.</p>
+
+<hr>
+
+<h2>Article 2: Information Collected</h2>
+
+<h3>2.1 Information Collected (Non-Personal Information)</h3>
+
+<p>The Service collects the following information when a shortened URL is accessed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Purpose of Collection</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Access Timestamp</td>
+      <td>Date and time the shortened URL was clicked (UTC)</td>
+      <td>Traffic analysis, fraud detection</td>
+    </tr>
+    <tr>
+      <td>Country/Region</td>
+      <td>Visitor's country code provided by Cloudflare (e.g., JP, US)</td>
+      <td>Understanding geographic trends</td>
+    </tr>
+    <tr>
+      <td>Referrer</td>
+      <td>Website URL of the access source (obtained from Referer header)</td>
+      <td>Analysis of traffic sources</td>
+    </tr>
+    <tr>
+      <td>Click Count</td>
+      <td>Total number of accesses to each shortened URL (aggregated value)</td>
+      <td>Understanding popular links</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2.2 Information Collected (System Data)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Short ID</td>
+      <td>6-character random identifier created by the User</td>
+      <td>Required for link management</td>
+    </tr>
+    <tr>
+      <td>Destination URL</td>
+      <td>Original URL registered by the User</td>
+      <td>Required for redirect functionality</td>
+    </tr>
+    <tr>
+      <td>Email Address</td>
+      <td>Email address registered by Registered Users for authentication</td>
+      <td>Required for login and data synchronization</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Article 3: Information NOT Collected (Explicit Non-Collection)</h2>
+
+<p>The Service <strong>does not collect any of the following information</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Specific Examples</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>IP Addresses</td>
+      <td>IPv4 addresses, IPv6 addresses</td>
+    </tr>
+    <tr>
+      <td>Device Identifiers</td>
+      <td>Device ID, MAC address, IMEI</td>
+    </tr>
+    <tr>
+      <td>Browser-related</td>
+      <td>Browser fingerprint, detailed user agent※</td>
+    </tr>
+    <tr>
+      <td>Location Data</td>
+      <td>GPS coordinates, precise geolocation information</td>
+    </tr>
+    <tr>
+      <td>Personally Identifiable Information (except email)</td>
+      <td>Name, phone number, physical address</td>
+    </tr>
+    <tr>
+      <td>Tracking Technologies</td>
+      <td>Cookies (including session cookies - none used at all)</td>
+    </tr>
+    <tr>
+      <td>Cross-site Tracking</td>
+      <td>Tracking of behavior across different websites</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>※ Standard Cloudflare Worker logs may contain user agent information; however, we <strong>do not save, record, or view</strong> this information. It is automatically discarded at Cloudflare's system level.</blockquote>
+
+<hr>
+
+<h2>Article 4: Data Retention Periods</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Retention Period</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Individual Click Logs</td>
+      <td><strong>90 days</strong></td>
+      <td>Automatically deleted from D1 database after this period</td>
+    </tr>
+    <tr>
+      <td>Aggregated Statistics (Total Clicks)</td>
+      <td>Indefinite</td>
+      <td>Retained as long as the link is active</td>
+    </tr>
+    <tr>
+      <td>Link Information (Short ID + Destination URL)</td>
+      <td>Indefinite</td>
+      <td>Users cannot delete this themselves※</td>
+    </tr>
+    <tr>
+      <td>Email Address</td>
+      <td>Duration of account validity</td>
+      <td>Users can request deletion at any time (separate process required)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>※ Link deletion functionality may be implemented in the future. Currently, we do not accept deletion requests.</blockquote>
+
+<hr>
+
+<h2>Article 5: Purpose of Data Use</h2>
+
+<p>Collected information is used only for the following purposes:</p>
+
+<ol>
+<li><strong>Service Provision</strong></li>
+</ol>
+<ul>
+<li>Correct redirect processing from shortened URLs</li>
+<li>Display of the landing page (with masking tape animation)</li>
+<li>Login functionality via email authentication</li>
+<li>Data synchronization across multiple devices for the same account</li>
+</ul>
+
+<ol>
+<li><strong>Service Improvement and Optimization</strong></li>
+</ol>
+<ul>
+<li>Analysis of access trends (e.g., access patterns by time of day)</li>
+<li>Identification of performance bottlenecks</li>
+</ul>
+
+<ol>
+<li><strong>Detection of Unauthorized or Prohibited Activities</strong></li>
+</ol>
+<ul>
+<li>Identifying abnormal access patterns caused by spam or bots</li>
+<li>Discovering URLs that violate prohibited activities (Article 4 of Terms of Service)</li>
+</ul>
+
+<ol>
+<li><strong>Advertising Effectiveness Measurement</strong> (planned for future implementation)</li>
+</ol>
+<ul>
+<li>Calculation of click-through rates for ads displayed on the landing page</li>
+<li>Creation of reports for monetization (aggregated values only, without personal identification)</li>
+</ul>
+
+<hr>
+
+<h2>Article 6: Third-Party Data Sharing</h2>
+
+<h3>6.1 When We Do NOT Share</h3>
+
+<p>We do not share collected information with third parties except in the following cases:</p>
+
+<ul>
+<li>When we obtain User consent</li>
+<li>When responding to legitimate legal disclosure requests based on applicable laws (court orders, formal requests from law enforcement agencies)</li>
+</ul>
+
+<h3>6.2 When We Share (Sub-processors)</h3>
+
+<p>The Service uses the following cloud platforms, which involve sending information to these platforms:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Service</th>
+      <th>Information Sent</th>
+      <th>Data Center Location(s)</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Cloudflare, Inc.</td>
+      <td>Workers, D1, Pages</td>
+      <td>Click logs, country information, referrer data</td>
+      <td>Worldwide (primarily Japan, USA)</td>
+    </tr>
+    <tr>
+      <td>Via Internet</td>
+      <td>Destination URL</td>
+      <td>Directly from End User's browser</td>
+      <td>Depends on User's destination</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These companies process data according to our instructions and are prohibited from using it for their own purposes.</p>
+
+<hr>
+
+<h2>Article 7: End User Rights</h2>
+
+<h3>7.1 Data Deletion Requests</h3>
+
+<p>If an End User wishes to have their own access logs deleted, we will respond as follows:</p>
+
+<ul>
+<li><strong>Feasibility</strong>: In principle, since <strong>individuals cannot be identified</strong>, we cannot identify and delete specific accesses.</li>
+<li><strong>Alternative Measure</strong>: If you wish to reset statistics for a specific shortened URL entirely, please contact us at abuse@hknw.link. However, we may decline such requests at our discretion.</li>
+</ul>
+
+<h3>7.2 Registered User Data Deletion</h3>
+
+<p>If a Registered User wishes to delete their account and associated data, please contact us at abuse@hknw.link. We will delete data associated with that email address within a reasonable period.</p>
+
+<h3>7.3 Opt-Out (Refusal of Collection)</h3>
+
+<p>If End Users do not wish to have statistical information collected:</p>
+
+<ul>
+<li><strong>Method</strong>: Even if you enable your browser's "Do Not Track" setting, the Service <strong>does not recognize</strong> this signal (technically not supported).</li>
+<li><strong>Alternative Method</strong>: Do not click on shortened URLs, or use an ad blocker (though this may result in incomplete statistics).</li>
+</ul>
+
+<hr>
+
+<h2>Article 8: Security Measures</h2>
+
+<p>We implement the following measures to protect collected information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Measure</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Encryption</td>
+      <td>Communication between Cloudflare Workers is encrypted with TLS 1.2 or higher</td>
+    </tr>
+    <tr>
+      <td>Access Control</td>
+      <td>D1 database access is permitted only from Workers (no direct access)</td>
+    </tr>
+    <tr>
+      <td>Principle of Least Privilege</td>
+      <td>Operators do not have access to more data than necessary</td>
+    </tr>
+    <tr>
+      <td>Regular Audits</td>
+      <td>Inventory of collected data is reviewed quarterly</td>
+    </tr>
+    <tr>
+      <td>Passwordless Authentication</td>
+      <td>Verification code method eliminates the risk of password list attacks</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Article 9: Children's Privacy</h2>
+
+<p>The Service <strong>does not intentionally collect information from individuals under the age of 13</strong>.</p>
+
+<ul>
+<li>If Users under 13 use the Service, they shall do so <strong>with parental consent</strong>.</li>
+<li>If a parent believes their child's information has been collected, please contact us at abuse@hknw.link.</li>
+</ul>
+
+<hr>
+
+<h2>Article 10: Changes to This Privacy Policy</h2>
+
+<ol>
+<li>We may change this policy without prior notice due to changes in laws or service content.</li>
+<li>If there are material changes, we will notify you by posting on the Service or our website.</li>
+<li>The revised policy will take effect at the time it is posted on the Service.</li>
+</ol>
+
+<hr>
+
+<h2>Article 11: Response to Data Breaches</h2>
+
+<p>In the unlikely event of a data breach involving collected information:</p>
+
+<ol>
+<li><strong>Investigation of Impact</strong>: Identify the breached information and analyze the cause</li>
+<li><strong>Notification to Users</strong>: Contact potentially affected Users (by email if a registered email address exists; otherwise, via posting on the Service only)</li>
+<li><strong>Preventive Measures</strong>: Implement technical and operational countermeasures</li>
+<li><strong>Report to Authorities</strong>: Report to Japan's Personal Information Protection Commission or other relevant authorities as required by law</li>
+</ol>
+
+<hr>
+
+<h2>Article 12: Contact Information</h2>
+
+<p>For inquiries regarding this Privacy Policy or questions about data processing, please contact us at:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purpose</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>General privacy inquiries</td>
+      <td>privacy@hknw.link</td>
+    </tr>
+    <tr>
+      <td>Data deletion requests</td>
+      <td>abuse@hknw.link</td>
+    </tr>
+    <tr>
+      <td>Legal inquiries</td>
+      <td>legal@hknw.link</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Estimated Response Time</strong>: Approximately 4 days after inquiry (excluding weekends and holidays)<br><strong>Languages</strong>: Japanese, English (consultation available)</p>
+
+<hr>
+
+<h2>Article 13: Governing Law and Jurisdiction</h2>
+
+<ol>
+<li>The interpretation and application of this Privacy Policy shall be governed by <strong>the laws of Japan</strong>.</li>
+<li>If any dispute arises between a User and us regarding this Privacy Policy or the use of the Service, the exclusive governing court for first-instance jurisdiction shall be the district court that has jurisdiction over our place of residence.</li>
+</ol>
+
+        <div class="updated">最終更新日: 2026-01-15</div>
+        
+    <div class="related">
+      <h3 class="related-title">関連ドキュメント</h3>
+      <div class="related-list">
+        
+          <a href="/docs/terms_en" class="related-link">
+            <span>📋</span>
+            <span>Terms of Service</span>
+          </a>
+        
+          <a href="/docs/disclaimer_en" class="related-link">
+            <span>⚠️</span>
+            <span>Disclaimer</span>
+          </a>
+        
+      </div>
+    </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:legal@hknw.link">legal@hknw.link</a>
+      <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
+      <a href="https://github.com/hknw/docs">GitHub</a>
+    </div>
+    <div class="copyright">
+      © 2026 HAKONIWA Studio. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

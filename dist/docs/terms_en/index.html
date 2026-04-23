@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/hakoniwa_link_icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service for Hakoniwa Link (hknw.link) URL shortening service.">
+  <meta name="robots" content="index, follow">
+  <title>Terms of Service | HAKONIWA Link</title>
+  <style>
+ /* ============================================================
+   個別ドキュメントページ用スタイル
+   - 利用規約、プライバシーポリシーなどの本文表示用
+   ============================================================ */
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベース設定 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.7;  /* 読みやすい行間 */
+}
+
+/* ========== ヘッダー（共通） ========== */
+.site-header {
+  background: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ロゴエリア */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ナビゲーションリンク */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* ========== メインコンテンツエリア ========== */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* コンテンツカード（白背景 + ボーダー） */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8ec;
+  overflow: hidden;
+}
+
+/* ========== パンくずリスト ========== */
+.breadcrumb {
+  padding: 1rem 2rem;
+  background: #fafafc;
+  border-bottom: 1px solid #e8e8ec;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #2c2c2e;
+  text-decoration: underline;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+/* ========== 戻るリンク ========== */
+.back-link {
+  padding: 1rem 2rem 0 2rem;
+}
+
+.back-link a {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.back-link a:hover {
+  color: #2c2c2e;
+}
+
+/* ========== 本文コンテンツ ========== */
+.content {
+  padding: 2rem;
+}
+
+/* 見出し */
+.content h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 1.5rem 0 0.75rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid #2c2c2e;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2e;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3a3a3e;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* 段落 */
+.content p {
+  margin-bottom: 1rem;
+  color: #3a3a3e;
+  line-height: 1.7;
+}
+
+/* リスト */
+.content ul,
+.content ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.25rem;
+  color: #3a3a3e;
+}
+
+/* 引用ブロック */
+.content blockquote {
+  background: #f8f8fa;
+  border-left: 3px solid #2c2c2e;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* インラインコード */
+.content code {
+  background: #f0f0f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+/* コードブロック */
+.content pre {
+  background: #1e1e2e;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.content pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+/* テーブル */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border: 1px solid #e8e8ec;
+}
+
+.content th {
+  background: #f8f8fa;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.content tr:last-child td {
+  border-bottom: none;
+}
+
+/* 水平線 */
+.content hr {
+  margin: 1.5rem 0;
+  border: none;
+  height: 1px;
+  background: #e8e8ec;
+}
+
+/* リンク */
+.content a {
+  color: #2c2c2e;
+  text-decoration: none;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.content a:hover {
+  border-bottom-color: #2c2c2e;
+}
+
+/* ========== 関連ドキュメント ========== */
+.related {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8e8ec;
+}
+
+.related-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.related-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #f0f0f4;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #3a3a3e;
+  transition: background 0.2s;
+}
+
+.related-link:hover {
+  background: #e8e8ec;
+  border-bottom: none;
+}
+
+/* ========== 更新日表示 ========== */
+.updated {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: right;
+  border-top: 1px solid #e8e8ec;
+}
+
+/* ========== フッター ========== */
+.site-footer {
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #2c2c2e;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ========== ダークモード対応 ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a2e;
+  }
+
+  .content-card {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+  }
+
+  .breadcrumb {
+    background: #25253a;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .breadcrumb a {
+    color: #a0aec0;
+  }
+
+  .breadcrumb a:hover {
+    color: #e2e8f0;
+  }
+
+  .content h1 {
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content h2 {
+    color: #e2e8f0;
+    border-left-color: #a0aec0;
+  }
+
+  .content h3 {
+    color: #cbd5e0;
+  }
+
+  .content p,
+  .content li {
+    color: #cbd5e0;
+  }
+
+  .content blockquote {
+    background: #25253a;
+    color: #a0aec0;
+  }
+
+  .content code {
+    background: #25253a;
+    color: #fc8181;
+  }
+
+  .content table {
+    border-color: #3a3a5a;
+  }
+
+  .content th {
+    background: #25253a;
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content td {
+    border-bottom-color: #3a3a5a;
+    color: #cbd5e0;
+  }
+
+  .content hr {
+    background: #3a3a5a;
+  }
+
+  .content a {
+    color: #a0aec0;
+    border-bottom-color: #4a5568;
+  }
+
+  .content a:hover {
+    border-bottom-color: #a0aec0;
+  }
+
+  .related {
+    border-top-color: #3a3a5a;
+  }
+
+  .related-title {
+    color: #888;
+  }
+
+  .related-link {
+    background: #25253a;
+    color: #cbd5e0;
+  }
+
+  .related-link:hover {
+    background: #3a3a5a;
+  }
+
+  .updated {
+    border-top-color: #3a3a5a;
+    color: #666;
+  }
+
+  .site-footer {
+    border-top-color: #3a3a5a;
+    background: #1a1a2e;
+  }
+
+  .footer-links a:hover {
+    color: #e2e8f0;
+  }
+
+  .back-link a {
+    color: #888;
+  }
+
+  .back-link a:hover {
+    color: #e2e8f0;
+  }
+}
+
+/* ========== レスポンシブ対応（スマホ） ========== */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .breadcrumb {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .back-link {
+    padding: 0.75rem 1.25rem 0 1.25rem;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .related-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .related-link {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ========== 印刷用スタイル ========== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .site-header,
+  .breadcrumb,
+  .back-link,
+  .related,
+  .site-footer {
+    display: none;
+  }
+
+  .content-card {
+    border: none;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .content a {
+    color: black;
+    border-bottom: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/">
+          <div class="logo-icon-wrapper">
+            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">HAKONIWA Link</span>
+            <span class="logo-sub">URL Shortener</span>
+          </div>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">📚 ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link">🔗 サービス</a>
+        <a href="#準備中-git" target="_blank" class="nav-link">🐙 GitHub(準備中)</a>
+        <a href="#準備中-discord" target="_blank" class="nav-link discord">💬 Discord(準備中) </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main">
+    <div class="content-card">
+      
+    <div class="breadcrumb">
+      <a href="/">ホーム</a>
+      <span class="separator">›</span>
+      <a href="/docs">ドキュメント</a>
+      <span class="separator">›</span>
+      <span>Terms of Service</span>
+    </div>
+  
+      
+    <div class="back-link">
+      <a href="/">← ドキュメント一覧に戻る</a>
+    </div>
+  
+      <div class="content">
+        <h1>Hakoniwa Link (hknw.link) Terms of Service</h1>
+
+<p><a href="/jp/terms" target="_blank" rel="noopener noreferrer">日本語はこちら</a></p>
+
+<h2>Operator</h2>
+HAKONIWA Studio
+
+<hr>
+
+<h2>Article 1: Application of Terms</h2>
+
+<ol>
+<li>These Terms of Service (hereinafter referred to as "the Terms") govern the terms of use for the URL shortening service "hknw.link" (hereinafter referred to as "the Service") provided by HAKONIWA Studio (hereinafter referred to as "we," "us," or "our").</li>
+<li>By using the Service, Users are deemed to have agreed to these Terms.</li>
+<li>If you do not agree to these Terms, you may not use the Service.</li>
+</ol>
+
+<hr>
+
+<h2>Article 2: Definitions</h2>
+
+<p>In these Terms, the following terms shall have the meanings specified below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+    <tr>
+      <td><strong>"Shortened URL"</strong></td>
+      <td>A short URL string generated through the Service that points to a destination URL (e.g., https://hknw.link/abc123)</td>
+    </tr>
+    <tr>
+      <td><strong>"Destination URL"</strong></td>
+      <td>The original website address registered by the User</td>
+    </tr>
+    <tr>
+      <td><strong>"User"</strong></td>
+      <td>An individual or legal entity that uses the Service to generate shortened URLs</td>
+    </tr>
+    <tr>
+      <td><strong>"Registered User"</strong></td>
+      <td>A User who has created an account by completing email authentication pursuant to Article 3</td>
+    </tr>
+    <tr>
+      <td><strong>"End User"</strong></td>
+      <td>A third party who clicks on a shortened URL to access the destination</td>
+    </tr>
+    <tr>
+      <td><strong>"Landing Page"</strong></td>
+      <td>The intermediate page displayed after clicking a shortened URL, featuring masking tape animation</td>
+    </tr>
+    <tr>
+      <td><strong>"Prohibited Activities"</strong></td>
+      <td>The activities set forth in Article 4 of these Terms</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Article 3: User Registration and Login</h2>
+
+<ol>
+<li>Users may log in and register by sending their email address using a method specified by us and entering the "verification code" sent to that email address.</li>
+</ol>
+
+<ol>
+<li>The Service provides the following features to logged-in "Registered Users":</li>
+</ol>
+<ul>
+<li><strong>Data Synchronization</strong>: Sharing of created shortened URL lists across multiple devices logged in with the same email address.</li>
+<li><strong>Statistics Management</strong>: Continuous access to statistical information for each shortened URL.</li>
+</ul>
+
+<ol>
+<li>Users shall carefully manage their own email address and the verification codes sent to them. We assume no responsibility whatsoever for any damages caused by unauthorized use of an email address by a third party.</li>
+</ol>
+
+<hr>
+
+<h2>Article 4: Prohibited Activities</h2>
+
+<p>Users shall not use the Service for the following purposes or in the following manners.</p>
+
+<h3>4.1 Links to Illegal Content</h3>
+
+<ul>
+<li>Sites involving child pornography, distribution or sale of obscene materials</li>
+<li>Content that infringes upon third-party intellectual property rights such as copyrights, trademarks, or patents</li>
+<li>Sites related to hacking, cracking, or malware distribution</li>
+<li>Illegal gambling or unlicensed online casinos</li>
+</ul>
+
+<h3>4.2 Nuisance Behavior / Spam</h3>
+
+<ul>
+<li>Use of shortened URLs in spam emails, chain emails, or unsolicited bulk emails</li>
+<li>Fraudulent inflation of click counts (continuous access via bots or automated scripts)</li>
+<li>Excessive requests that interfere with the Service (including DDoS attacks)</li>
+<li>Dissemination of shortened URLs in a manner that causes nuisance to third parties</li>
+</ul>
+
+<h3>4.3 Fraud / Impersonation</h3>
+
+<ul>
+<li>Links to phishing sites (sites that steal login information)</li>
+<li>Creation of URLs that impersonate legitimate companies or organizations</li>
+<li>Criminal activities such as financial fraud, investment fraud, or romance scams</li>
+<li>Information gathering disguised as fake sweepstakes or giveaways</li>
+</ul>
+
+<h3>4.4 Activities Contrary to Public Order and Morals</h3>
+
+<ul>
+<li>Discriminatory expressions or hate speech</li>
+<li>Content that encourages or glorifies violence, murder, or suicide</li>
+<li>Information regarding transactions of illegal drugs, etc.</li>
+<li>Depictions of abuse</li>
+</ul>
+
+<hr>
+
+<h2>Article 5: Suspension of Use / URL Invalidation</h2>
+
+<p>If we determine that a User falls under any of the following, we may invalidate the shortened URL, suspend use, or delete related statistical data without prior notice.</p>
+
+<ol>
+<li>Violation of Article 4 (Prohibited Activities)</li>
+<li>Receipt of a legitimate complaint or notice of rights infringement from a third party</li>
+<li>Failure to respond to communications from us without legitimate reason</li>
+<li>Any other conduct that interferes with the operation of the Service</li>
+</ol>
+
+<p>Access to invalidated shortened URLs will result in an error page (404 or invalidation notice) displayed to End Users.</p>
+
+<hr>
+
+<h2>Article 6: Handling of Statistical Data</h2>
+
+<ol>
+<li>The Service collects the following access information for shortened URLs:</li>
+</ol>
+<ul>
+<li>Access timestamp</li>
+<li>Country/region of access source (based on Cloudflare-provided data)</li>
+<li>Referrer (source website)</li>
+<li>Total click count</li>
+</ul>
+
+<ol>
+<li><strong>Registered Users</strong> can view and manage statistical information for shortened URLs created with the same email address from their own dashboard.</li>
+</ol>
+
+<ol>
+<li>Personally identifiable information (IP addresses, browser fingerprints, device IDs, cookies, etc.) is <strong>not collected</strong> for statistical purposes under this Article. Please see our <a href="/en/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for details.</li>
+</ol>
+
+<hr>
+
+<h2>Article 7: Plan Structure</h2>
+
+<p>The Service offers the following plans:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Price</th>
+      <th>Main Features</th>
+    </tr>
+  </thead>
+    <tr>
+      <td><strong>Free Plan</strong></td>
+      <td>0 JPY</td>
+      <td>URL shortening, landing page (with ads), basic statistics</td>
+    </tr>
+    <tr>
+      <td><strong>Studio Plan</strong></td>
+      <td>To be determined</td>
+      <td>Ad-free, detailed statistics, priority support, etc.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>※ Detailed pricing and features of the Studio Plan will be displayed separately on the Service.</p>
+
+<hr>
+
+<h2>Article 8: Advertising Display</h2>
+
+<ol>
+<li>Under the <strong>Free Plan</strong>, advertisements may be displayed on the "Landing Page" when a shortened URL is accessed.</li>
+<li>Ad content is provided by us or our partner advertisers. We assume no responsibility whatsoever for ad content.</li>
+<li>Users agree not to use means of avoiding ad display (such as ad blockers).</li>
+<li>The <strong>Studio Plan</strong> offers an ad-free option.</li>
+</ol>
+
+<hr>
+
+<h2>Article 9: Intellectual Property Rights</h2>
+
+<ol>
+<li>All intellectual property rights related to the Service (software, design, logos, text, images, animations, etc.) belong to us or the rightful rights holders.</li>
+<li>Users may not assert any particular rights over the shortened URLs generated by the Service.</li>
+<li>Intellectual property rights related to the content of Destination URLs registered by Users belong to the Users or their rights holders.</li>
+</ol>
+
+<hr>
+
+<h2>Article 10: Suspension, Change, or Discontinuation of Service</h2>
+
+<p>We may suspend, change, or discontinue all or part of the Service without prior notice in the following cases:</p>
+
+<ol>
+<li>When performing regular or emergency system maintenance or updates</li>
+<li>When service provision becomes difficult due to fire, power outage, earthquake, server hacking, or similar events</li>
+<li>When continued operation of the Service becomes difficult due to changes in laws or regulations</li>
+<li>Any other operational technical or unavoidable circumstances</li>
+</ol>
+
+<p>We shall not be liable for any damages incurred by Users or third parties resulting from such measures.</p>
+
+<hr>
+
+<h2>Article 11: Changes to Terms</h2>
+
+<ol>
+<li>We may change these Terms as necessary.</li>
+<li>The revised Terms shall become effective upon posting on the Service or our website.</li>
+<li>If there are material changes, we will notify Users in advance of the changes and the effective date.</li>
+<li>If a User uses the Service after changes are made, they shall be deemed to have agreed to the revised Terms.</li>
+</ol>
+
+<hr>
+
+<h2>Article 12: Governing Law and Jurisdiction</h2>
+
+<ol>
+<li>The interpretation and application of these Terms shall be governed by <strong>the laws of Japan</strong>.</li>
+<li>If any dispute arises between a User and us regarding these Terms or the use of the Service, the exclusive governing court for first-instance jurisdiction shall be the district court that has jurisdiction over our place of residence.</li>
+</ol>
+
+<hr>
+
+<h2>Article 13: Contact Methods</h2>
+
+<p>Users may contact us using the following email addresses:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purpose</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>General inquiries</td>
+      <td>info@hknw.link</td>
+    </tr>
+    <tr>
+      <td>Legal notices / rights infringement reports</td>
+      <td>legal@hknw.link</td>
+    </tr>
+    <tr>
+      <td>Reports of prohibited activities</td>
+      <td>abuse@hknw.link</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Estimated Response Time</strong>: Approximately 4 days after inquiry (excluding weekends and holidays)<br><strong>Languages</strong>: Japanese, English (consultation available)</p>
+
+<hr>
+
+<h2>Article 14: Severability</h2>
+
+<p>If any provision of these Terms is determined to be invalid or unenforceable under applicable law, the remaining provisions shall continue in full force and effect.<br></p>
+        <div class="updated">最終更新日: 2026-01-15</div>
+        
+    <div class="related">
+      <h3 class="related-title">関連ドキュメント</h3>
+      <div class="related-list">
+        
+          <a href="/docs/privacy_en" class="related-link">
+            <span>🔒</span>
+            <span>Privacy Policy</span>
+          </a>
+        
+          <a href="/docs/disclaimer_en" class="related-link">
+            <span>⚠️</span>
+            <span>Disclaimer</span>
+          </a>
+        
+      </div>
+    </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:legal@hknw.link">legal@hknw.link</a>
+      <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
+      <a href="https://github.com/hknw/docs">GitHub</a>
+    </div>
+    <div class="copyright">
+      © 2026 HAKONIWA Studio. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

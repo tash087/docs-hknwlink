@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/terms</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/tokushoho</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/disclaimer</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/privacy</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/terms_en</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/privacy_en</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://docs-hknw.pages.dev/docs/disclaimer_en</loc>
+    <lastmod>2026-01-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>

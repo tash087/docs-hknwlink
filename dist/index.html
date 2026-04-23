@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/hakoniwa_link_icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HAKONIWA Linkの公式ドキュメント。利用規約、プライバシーポリシー、サーバールールなど。">
+  <meta name="robots" content="index, follow">
+  <title>ドキュメント | HAKONIWA Link</title>
+  <style>
+/* ============================================================
+   ドキュメント一覧ページ用スタイル
+   - トップページ（ポータル）用
+   - カテゴリー別ドキュメントリスト + 検索機能
+   ============================================================ */
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベース設定 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+/* ========== ヘッダー（共通） ========== */
+.site-header {
+  background: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ロゴエリア */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ナビゲーションリンク */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* ========== メインコンテンツエリア ========== */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ========== ページタイトル ========== */
+.page-title {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+/* ========== 統計バー ========== */
+.stats {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8ec;
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2c2e;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ========== 検索ボックス ========== */
+.search {
+  margin-bottom: 2rem;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search input:focus {
+  border-color: #2c2c2e;
+}
+
+/* ========== カテゴリーセクション ========== */
+.category {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c2c2e;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid #2c2c2e;
+}
+
+/* ========== ドキュメントリスト ========== */
+.doc-list {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8ec;
+  overflow: hidden;
+}
+
+/* 各ドキュメントのリンクカード */
+.doc-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+/* 最後の項目はボーダーなし */
+.doc-link:last-child {
+  border-bottom: none;
+}
+
+/* ホバー時の背景色 */
+.doc-link:hover {
+  background: #f8f8fa;
+}
+
+/* アイコン */
+.doc-icon {
+  font-size: 1.25rem;
+  min-width: 28px;
+}
+
+/* タイトル + 説明文エリア */
+.doc-info {
+  flex: 1;
+}
+
+.doc-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin-bottom: 0.2rem;
+}
+
+.doc-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* 矢印アイコン */
+.doc-arrow {
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.doc-link:hover .doc-arrow {
+  transform: translateX(3px);
+  color: #2c2c2e;
+}
+
+/* ========== 検索結果なし表示 ========== */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+}
+
+/* ========== フッター ========== */
+.site-footer {
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #2c2c2e;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ========== ダークモード対応 ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a2e;
+  }
+
+  .doc-list {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+  }
+
+  .doc-link {
+    border-bottom-color: #3a3a5a;
+  }
+
+  .doc-link:hover {
+    background: #3a3a5a;
+  }
+
+  .doc-title {
+    color: #e2e8f0;
+  }
+
+  .doc-desc {
+    color: #a0aec0;
+  }
+
+  .stats {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+  }
+
+  .stat-number {
+    color: #e2e8f0;
+  }
+
+  .stat-label {
+    color: #a0aec0;
+  }
+
+  .search input {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+    color: white;
+  }
+
+  .search input:focus {
+    border-color: #a0aec0;
+  }
+
+  .page-title {
+    border-bottom-color: #3a3a5a;
+  }
+
+  .page-title h1 {
+    color: #e2e8f0;
+  }
+
+  .category-title {
+    color: #e2e8f0;
+    border-left-color: #a0aec0;
+  }
+
+  .site-footer {
+    border-top-color: #3a3a5a;
+    background: #1a1a2e;
+  }
+
+  .footer-links a:hover {
+    color: #e2e8f0;
+  }
+
+  .doc-arrow {
+    color: #4a5568;
+  }
+
+  .doc-link:hover .doc-arrow {
+    color: #a0aec0;
+  }
+}
+
+/* ========== レスポンシブ対応（スマホ） ========== */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .page-title h1 {
+    font-size: 1.4rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doc-link {
+    padding: 0.75rem 1rem;
+  }
+
+  /* スマホでは説明文を非表示（省スペース） */
+  .doc-desc {
+    display: none;
+  }
+}
+
+/* ========== 印刷用スタイル ========== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .site-header,
+  .search,
+  .stats,
+  .site-footer {
+    display: none;
+  }
+
+  .doc-list {
+    border: none;
+  }
+
+  .doc-link {
+    border-bottom: 1px solid #ccc;
+  }
+}
+    </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/">
+          <div class="logo-icon-wrapper">
+            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">HAKONIWA Link</span>
+            <span class="logo-sub">URL Shortener</span>
+          </div>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">📚 ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link">🔗 サービス</a>
+        <a href="#準備中-git" target="_blank" class="nav-link">🐙 GitHub(準備中)</a>
+        <a href="#準備中-discord" target="_blank" class="nav-link discord">💬 Discord(準備中) </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main">
+    <div class="page-title">
+      <h1>📚 ドキュメント</h1>
+    </div>
+    
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">7</span>
+        <span class="stat-label">ドキュメント</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2</span>
+        <span class="stat-label">カテゴリー</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2026</span>
+        <span class="stat-label">開設</span>
+      </div>
+    </div>
+    
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="ドキュメントを検索..." autocomplete="off">
+    </div>
+    
+    <div id="categoriesContainer">
+      
+    <div class="category">
+      <h2 class="category-title">基本規約</h2>
+      <div class="doc-list">
+        
+      <a href="/docs/terms" class="doc-link">
+        <span class="doc-icon">📋</span>
+        <div class="doc-info">
+          <span class="doc-title">利用規約</span>
+          <span class="doc-desc">箱庭リンク（hknw.link）の利用規約です。サービスの利用条件、禁止行為、利用停止などについて定めています。</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      <a href="/docs/tokushoho" class="doc-link">
+        <span class="doc-icon">🏪</span>
+        <div class="doc-info">
+          <span class="doc-title">特定商取引法に基づく表記</span>
+          <span class="doc-desc">特定商取引法第11条に基づく法定表記です。運営者情報、価格、支払方法などを掲載しています。</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      <a href="/docs/disclaimer" class="doc-link">
+        <span class="doc-icon">⚠️</span>
+        <div class="doc-info">
+          <span class="doc-title">免責事項</span>
+          <span class="doc-desc">箱庭リンクの免責事項です。転送先URLの内容、エンドユーザーの損害、サービスの安定性などに関する免責を定めています。</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      <a href="/docs/privacy" class="doc-link">
+        <span class="doc-icon">🔒</span>
+        <div class="doc-info">
+          <span class="doc-title">プライバシーポリシー</span>
+          <span class="doc-desc">個人情報の取り扱いについての方針です。収集する情報、収集しない情報、保存期間、第三者提供などを定めています。</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      </div>
+    </div>
+  
+    <div class="category">
+      <h2 class="category-title">English</h2>
+      <div class="doc-list">
+        
+      <a href="/docs/terms_en" class="doc-link">
+        <span class="doc-icon">📋</span>
+        <div class="doc-info">
+          <span class="doc-title">Terms of Service</span>
+          <span class="doc-desc">Terms of Service for Hakoniwa Link (hknw.link) URL shortening service.</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      <a href="/docs/privacy_en" class="doc-link">
+        <span class="doc-icon">🔒</span>
+        <div class="doc-info">
+          <span class="doc-title">Privacy Policy</span>
+          <span class="doc-desc">Privacy policy for Hakoniwa Link (hknw.link). Information collection, retention, and data handling.</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      <a href="/docs/disclaimer_en" class="doc-link">
+        <span class="doc-icon">⚠️</span>
+        <div class="doc-info">
+          <span class="doc-title">Disclaimer</span>
+          <span class="doc-desc">Disclaimer for Hakoniwa Link (hknw.link). Limitation of liability and risk disclosure.</span>
+        </div>
+        <span class="doc-arrow">→</span>
+      </a>
+    
+      </div>
+    </div>
+  
+    </div>
+    
+    <div id="noResults" class="no-results" style="display: none;">
+      <p>🔍 検索結果が見つかりませんでした</p>
+      <p style="font-size: 0.85rem; margin-top: 0.5rem;">別のキーワードで試してみてください</p>
+    </div>
+  </div>
+  
+  <div class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:legal@hknw.link">legal@hknw.link</a>
+      <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
+      <a href="https://github.com/hknw/docs">GitHub</a>
+    </div>
+    <div class="copyright">
+      © 2026 HAKONIWA Studio. All rights reserved.
+    </div>
+  </div>
+  
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const categoriesContainer = document.getElementById('categoriesContainer');
+    const noResults = document.getElementById('noResults');
+    
+    const allDocs = [{"title":"利用規約","description":"箱庭リンク（hknw.link）の利用規約です。サービスの利用条件、禁止行為、利用停止などについて定めています。","path":"/docs/terms","category":"basic","categoryName":"基本規約","icon":"📋"},{"title":"特定商取引法に基づく表記","description":"特定商取引法第11条に基づく法定表記です。運営者情報、価格、支払方法などを掲載しています。","path":"/docs/tokushoho","category":"basic","categoryName":"基本規約","icon":"🏪"},{"title":"免責事項","description":"箱庭リンクの免責事項です。転送先URLの内容、エンドユーザーの損害、サービスの安定性などに関する免責を定めています。","path":"/docs/disclaimer","category":"basic","categoryName":"基本規約","icon":"⚠️"},{"title":"プライバシーポリシー","description":"個人情報の取り扱いについての方針です。収集する情報、収集しない情報、保存期間、第三者提供などを定めています。","path":"/docs/privacy","category":"basic","categoryName":"基本規約","icon":"🔒"},{"title":"Terms of Service","description":"Terms of Service for Hakoniwa Link (hknw.link) URL shortening service.","path":"/docs/terms_en","category":"english","categoryName":"English","icon":"📋"},{"title":"Privacy Policy","description":"Privacy policy for Hakoniwa Link (hknw.link). Information collection, retention, and data handling.","path":"/docs/privacy_en","category":"english","categoryName":"English","icon":"🔒"},{"title":"Disclaimer","description":"Disclaimer for Hakoniwa Link (hknw.link). Limitation of liability and risk disclosure.","path":"/docs/disclaimer_en","category":"english","categoryName":"English","icon":"⚠️"}];
+    
+    const categoryOrder = ["basic","english"];
+    
+    function renderDocList(docs) {
+      return docs.map(doc => `
+        <a href="${doc.path}" class="doc-link">
+          <span class="doc-icon">${doc.icon}</span>
+          <div class="doc-info">
+            <span class="doc-title">${escapeHtml(doc.title)}</span>
+            <span class="doc-desc">${escapeHtml(doc.description)}</span>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+      `).join('');
+    }
+    
+    function renderCategories(docs) {
+      const grouped = {};
+      for (const doc of docs) {
+        if (!grouped[doc.category]) grouped[doc.category] = [];
+        grouped[doc.category].push(doc);
+      }
+      
+      let html = '';
+      for (const catId of categoryOrder) {
+        if (grouped[catId] && grouped[catId].length > 0) {
+          const catName = grouped[catId][0].categoryName;
+          html += `
+            <div class="category">
+              <h2 class="category-title">${escapeHtml(catName)}</h2>
+              <div class="doc-list">
+                ${renderDocList(grouped[catId])}
+              </div>
+            </div>
+          `;
+        }
+      }
+      return html;
+    }
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    function performSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      
+      if (query === '') {
+        categoriesContainer.innerHTML = renderCategories(allDocs);
+        noResults.style.display = 'none';
+        return;
+      }
+      
+      const filtered = allDocs.filter(doc => 
+        doc.title.toLowerCase().includes(query) ||
+        doc.description.toLowerCase().includes(query) ||
+        doc.categoryName.toLowerCase().includes(query)
+      );
+      
+      if (filtered.length === 0) {
+        categoriesContainer.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      noResults.style.display = 'none';
+      categoriesContainer.innerHTML = renderCategories(filtered);
+    }
+    
+    searchInput.addEventListener('input', performSearch);
+  </script>
+</body>
+</html>

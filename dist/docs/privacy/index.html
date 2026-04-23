@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/hakoniwa_link_icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="個人情報の取り扱いについての方針です。収集する情報、収集しない情報、保存期間、第三者提供などを定めています。">
+  <meta name="robots" content="index, follow">
+  <title>プライバシーポリシー | HAKONIWA Link</title>
+  <style>
+ /* ============================================================
+   個別ドキュメントページ用スタイル
+   - 利用規約、プライバシーポリシーなどの本文表示用
+   ============================================================ */
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベース設定 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.7;  /* 読みやすい行間 */
+}
+
+/* ========== ヘッダー（共通） ========== */
+.site-header {
+  background: #2c2c2e;
+  border-bottom: 1px solid #3a3a3c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ロゴエリア */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ナビゲーションリンク */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* ========== メインコンテンツエリア ========== */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* コンテンツカード（白背景 + ボーダー） */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8ec;
+  overflow: hidden;
+}
+
+/* ========== パンくずリスト ========== */
+.breadcrumb {
+  padding: 1rem 2rem;
+  background: #fafafc;
+  border-bottom: 1px solid #e8e8ec;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #2c2c2e;
+  text-decoration: underline;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+/* ========== 戻るリンク ========== */
+.back-link {
+  padding: 1rem 2rem 0 2rem;
+}
+
+.back-link a {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.back-link a:hover {
+  color: #2c2c2e;
+}
+
+/* ========== 本文コンテンツ ========== */
+.content {
+  padding: 2rem;
+}
+
+/* 見出し */
+.content h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 1.5rem 0 0.75rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid #2c2c2e;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2e;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3a3a3e;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* 段落 */
+.content p {
+  margin-bottom: 1rem;
+  color: #3a3a3e;
+  line-height: 1.7;
+}
+
+/* リスト */
+.content ul,
+.content ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.25rem;
+  color: #3a3a3e;
+}
+
+/* 引用ブロック */
+.content blockquote {
+  background: #f8f8fa;
+  border-left: 3px solid #2c2c2e;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* インラインコード */
+.content code {
+  background: #f0f0f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+/* コードブロック */
+.content pre {
+  background: #1e1e2e;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.content pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+/* テーブル */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border: 1px solid #e8e8ec;
+}
+
+.content th {
+  background: #f8f8fa;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.content td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.content tr:last-child td {
+  border-bottom: none;
+}
+
+/* 水平線 */
+.content hr {
+  margin: 1.5rem 0;
+  border: none;
+  height: 1px;
+  background: #e8e8ec;
+}
+
+/* リンク */
+.content a {
+  color: #2c2c2e;
+  text-decoration: none;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.content a:hover {
+  border-bottom-color: #2c2c2e;
+}
+
+/* ========== 関連ドキュメント ========== */
+.related {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8e8ec;
+}
+
+.related-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.related-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #f0f0f4;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #3a3a3e;
+  transition: background 0.2s;
+}
+
+.related-link:hover {
+  background: #e8e8ec;
+  border-bottom: none;
+}
+
+/* ========== 更新日表示 ========== */
+.updated {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: right;
+  border-top: 1px solid #e8e8ec;
+}
+
+/* ========== フッター ========== */
+.site-footer {
+  border-top: 1px solid #e0e0e0;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #2c2c2e;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ========== ダークモード対応 ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a2e;
+  }
+
+  .content-card {
+    background: #2d2d44;
+    border-color: #3a3a5a;
+  }
+
+  .breadcrumb {
+    background: #25253a;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .breadcrumb a {
+    color: #a0aec0;
+  }
+
+  .breadcrumb a:hover {
+    color: #e2e8f0;
+  }
+
+  .content h1 {
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content h2 {
+    color: #e2e8f0;
+    border-left-color: #a0aec0;
+  }
+
+  .content h3 {
+    color: #cbd5e0;
+  }
+
+  .content p,
+  .content li {
+    color: #cbd5e0;
+  }
+
+  .content blockquote {
+    background: #25253a;
+    color: #a0aec0;
+  }
+
+  .content code {
+    background: #25253a;
+    color: #fc8181;
+  }
+
+  .content table {
+    border-color: #3a3a5a;
+  }
+
+  .content th {
+    background: #25253a;
+    color: #e2e8f0;
+    border-bottom-color: #3a3a5a;
+  }
+
+  .content td {
+    border-bottom-color: #3a3a5a;
+    color: #cbd5e0;
+  }
+
+  .content hr {
+    background: #3a3a5a;
+  }
+
+  .content a {
+    color: #a0aec0;
+    border-bottom-color: #4a5568;
+  }
+
+  .content a:hover {
+    border-bottom-color: #a0aec0;
+  }
+
+  .related {
+    border-top-color: #3a3a5a;
+  }
+
+  .related-title {
+    color: #888;
+  }
+
+  .related-link {
+    background: #25253a;
+    color: #cbd5e0;
+  }
+
+  .related-link:hover {
+    background: #3a3a5a;
+  }
+
+  .updated {
+    border-top-color: #3a3a5a;
+    color: #666;
+  }
+
+  .site-footer {
+    border-top-color: #3a3a5a;
+    background: #1a1a2e;
+  }
+
+  .footer-links a:hover {
+    color: #e2e8f0;
+  }
+
+  .back-link a {
+    color: #888;
+  }
+
+  .back-link a:hover {
+    color: #e2e8f0;
+  }
+}
+
+/* ========== レスポンシブ対応（スマホ） ========== */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .breadcrumb {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .back-link {
+    padding: 0.75rem 1.25rem 0 1.25rem;
+  }
+
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .related-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .related-link {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ========== 印刷用スタイル ========== */
+@media print {
+  body {
+    background: white;
+  }
+
+  .site-header,
+  .breadcrumb,
+  .back-link,
+  .related,
+  .site-footer {
+    display: none;
+  }
+
+  .content-card {
+    border: none;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .content a {
+    color: black;
+    border-bottom: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="/">
+          <div class="logo-icon-wrapper">
+            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">HAKONIWA Link</span>
+            <span class="logo-sub">URL Shortener</span>
+          </div>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">📚 ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link">🔗 サービス</a>
+        <a href="#準備中-git" target="_blank" class="nav-link">🐙 GitHub(準備中)</a>
+        <a href="#準備中-discord" target="_blank" class="nav-link discord">💬 Discord(準備中) </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main">
+    <div class="content-card">
+      
+    <div class="breadcrumb">
+      <a href="/">ホーム</a>
+      <span class="separator">›</span>
+      <a href="/docs">ドキュメント</a>
+      <span class="separator">›</span>
+      <span>プライバシーポリシー</span>
+    </div>
+  
+      
+    <div class="back-link">
+      <a href="/">← ドキュメント一覧に戻る</a>
+    </div>
+  
+      <div class="content">
+        <h1>箱庭リンク (hknw.link) プライバシーポリシー</h1>
+
+<p><a href="/en/privacy" target="_blank" rel="noopener noreferrer">英語はこちら</a></p>
+
+<h2>運営者</h2>
+箱庭スタジオ（HAKONIWA Studio）
+
+<hr>
+
+<h2>第1条 基本方針</h2>
+
+<p>箱庭スタジオ（以下「当運営」といいます）は、短縮URLサービス「hknw.link」（以下「本サービス」といいます）の利用者（以下「ユーザー」といいます）および短縮URLをクリックするエンドユーザー（以下「エンドユーザー」といいます）のプライバシーを尊重し、個人の特定が可能な情報を<strong>必要最小限にとどめる</strong>ことを基本方針とします。</p>
+
+<p>本サービスは「<strong>プライバシーバイデザイン</strong>」の考えに基づき、サービスの提供に必要な範囲でのみ情報を収集します。</p>
+
+<hr>
+
+<h2>第2条 収集する情報</h2>
+
+<h3>2.1 収集する情報（非個人情報）</h3>
+
+<p>本サービスは、短縮URLへのアクセスに伴い以下の情報を収集します。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>説明</th>
+      <th>収集目的</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>アクセス日時</td>
+      <td>短縮URLがクリックされた日時（UTC）</td>
+      <td>トラフィック分析、不正検出</td>
+    </tr>
+    <tr>
+      <td>国・地域</td>
+      <td>Cloudflareが提供する訪問者の国コード（例：JP, US）</td>
+      <td>地理的傾向の把握</td>
+    </tr>
+    <tr>
+      <td>リファラー</td>
+      <td>アクセス元のウェブサイトURL（Refererヘッダーから取得）</td>
+      <td>流入経路の分析</td>
+    </tr>
+    <tr>
+      <td>クリック数</td>
+      <td>各短縮URLの総アクセス回数（集計値）</td>
+      <td>人気リンクの把握</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2.2 収集する情報（システム上）</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>説明</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>短縮ID</td>
+      <td>ユーザーが作成した6文字のランダム識別子</td>
+      <td>リンク管理のために必須</td>
+    </tr>
+    <tr>
+      <td>転送先URL</td>
+      <td>ユーザーが登録した元のURL</td>
+      <td>リダイレクト機能のために必須</td>
+    </tr>
+    <tr>
+      <td>メールアドレス</td>
+      <td>登録ユーザーが認証のために登録したメールアドレス</td>
+      <td>ログイン・データ同期のために必須</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>第3条 収集しない情報（明示的非収集）</h2>
+
+<p>本サービスは以下の情報を<strong>一切収集しません</strong>：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>カテゴリ</th>
+      <th>具体例</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>IPアドレス</td>
+      <td>IPv4アドレス、IPv6アドレス</td>
+    </tr>
+    <tr>
+      <td>デバイス識別子</td>
+      <td>デバイスID、MACアドレス、IMEI</td>
+    </tr>
+    <tr>
+      <td>ブラウザ関連</td>
+      <td>ブラウザフィンガープリント、ユーザーエージェント（詳細）※</td>
+    </tr>
+    <tr>
+      <td>位置情報</td>
+      <td>GPS座標、詳細な地理位置情報</td>
+    </tr>
+    <tr>
+      <td>個人特定情報（メールアドレスを除く）</td>
+      <td>氏名、電話番号、住所</td>
+    </tr>
+    <tr>
+      <td>トラッキング技術</td>
+      <td>Cookie（セッションCookieも含め一切不使用）</td>
+    </tr>
+    <tr>
+      <td>クロスサイト追跡</td>
+      <td>異なるウェブサイト間での行動追跡</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>※ Cloudflare Workersの標準ログにはユーザーエージェントが含まれる場合がありますが、当運営はこの情報を<strong>保存・記録・閲覧しません</strong>。Cloudflareのシステムレベルで自動的に廃棄されます。</blockquote>
+
+<hr>
+
+<h2>第4条 統計データの保存期間</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>データ種別</th>
+      <th>保存期間</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>クリックログ（個別）</td>
+      <td><strong>90日間</strong></td>
+      <td>経過後は自動的にD1データベースから削除</td>
+    </tr>
+    <tr>
+      <td>集計統計（クリック総数）</td>
+      <td>無期限</td>
+      <td>リンクが有効な限り保持</td>
+    </tr>
+    <tr>
+      <td>リンク情報（短縮ID＋転送先URL）</td>
+      <td>無期限</td>
+      <td>ユーザー自身が削除できない仕様※</td>
+    </tr>
+    <tr>
+      <td>メールアドレス</td>
+      <td>アカウント有効期間中</td>
+      <td>ユーザーが任意のタイミングで削除可能（別途対応）</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>※ 将来的にリンク削除機能を実装する場合があります。現時点では削除リクエストは受け付けておりません。</blockquote>
+
+<hr>
+
+<h2>第5条 データの使用目的</h2>
+
+<p>収集した情報は以下の目的のみに使用されます：</p>
+
+<ol>
+<li><strong>サービス提供のため</strong></li>
+</ol>
+<ul>
+<li>短縮URLからの正しいリダイレクト処理</li>
+<li>待機画面（ガムテープ演出）の表示</li>
+<li>メールアドレス認証によるログイン機能の提供</li>
+<li>同一アカウントでの複数デバイス間データ同期</li>
+</ul>
+
+<ol>
+<li><strong>サービスの改善・最適化のため</strong></li>
+</ol>
+<ul>
+<li>アクセス傾向の分析（例：時間帯別アクセス数）</li>
+<li>パフォーマンスボトルネックの特定</li>
+</ul>
+
+<ol>
+<li><strong>不正行為・違反行為の検出のため</strong></li>
+</ol>
+<ul>
+<li>スパムやボットによる異常なアクセスパターンの特定</li>
+<li>禁止行為（利用規約第4条）に該当するURLの発見</li>
+</ul>
+
+<ol>
+<li><strong>広告効果測定のため</strong>（将来実装予定）</li>
+</ol>
+<ul>
+<li>待機画面に表示される広告のクリック率算出</li>
+<li>収益化のためのレポート作成（個人を特定しない集計値のみ）</li>
+</ul>
+
+<hr>
+
+<h2>第6条 データの第三者提供</h2>
+
+<h3>6.1 提供しない場合</h3>
+
+<p>当運営は、以下の場合を除き、収集した情報を第三者に提供しません：</p>
+
+<ul>
+<li>ユーザーの同意を得た場合</li>
+<li>法令に基づく正当な開示請求を受けた場合（裁判所命令、捜査機関からの正式な要請）</li>
+</ul>
+
+<h3>6.2 提供する場合（サブプロセッサー）</h3>
+
+<p>本サービスは以下のクラウドプラットフォームを使用しており、これらプラットフォームへの情報送信が発生します：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>事業者</th>
+      <th>サービス</th>
+      <th>送信される情報</th>
+      <th>データセンター所在地</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Cloudflare, Inc.</td>
+      <td>Workers, D1, Pages</td>
+      <td>クリックログ、国情報、リファラー</td>
+      <td>世界分散（主に日本、米国）</td>
+    </tr>
+    <tr>
+      <td>インターネット経由</td>
+      <td>転送先URL</td>
+      <td>エンドユーザーのブラウザから直接</td>
+      <td>ユーザーの転送先による</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>これらの事業者は、当運営の指示に従ってデータを処理し、独自の目的で利用することを禁止されています。</p>
+
+<hr>
+
+<h2>第7条 エンドユーザーの権利</h2>
+
+<h3>7.1 データ削除リクエスト</h3>
+
+<p>エンドユーザーが自身のアクセスログの削除を希望する場合、以下の方法で対応します：</p>
+
+<ul>
+<li><strong>対応の可否</strong>: 原則として<strong>個人を特定できない</strong>ため、特定のアクセスだけを識別して削除することはできません。</li>
+<li><strong>代替措置</strong>: 該当する短縮URL全体の統計リセットを希望される場合は、abuse@hknw.linkまでご連絡ください。ただし、運営の裁量により対応しない場合があります。</li>
+</ul>
+
+<h3>7.2 登録ユーザーのデータ削除</h3>
+
+<p>登録ユーザーが自身のアカウントおよび関連データの削除を希望する場合、abuse@hknw.linkまでご連絡ください。当運営は、合理的な期間内に当該メールアドレスに関連するデータを削除します。</p>
+
+<h3>7.3 アクセス拒否（オプトアウト）</h3>
+
+<p>エンドユーザーが統計情報の収集を希望しない場合：</p>
+
+<ul>
+<li><strong>方法</strong>: ブラウザの「Do Not Track」設定を有効にしても、本サービスはこのシグナルを<strong>認識しません</strong>（技術的に未対応）。</li>
+<li><strong>代替方法</strong>: 短縮URLをクリックしない、または広告ブロッカーと併用する（ただし統計漏れが発生する可能性があります）。</li>
+</ul>
+
+<hr>
+
+<h2>第8条 セキュリティ対策</h2>
+
+<p>当運営は、収集した情報を保護するために以下の対策を実施しています：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>対策</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>暗号化</td>
+      <td>Cloudflare Workers間の通信はTLS 1.2以上で暗号化</td>
+    </tr>
+    <tr>
+      <td>アクセス制御</td>
+      <td>D1データベースへのアクセスはWorkersからのみ許可（直接アクセス不可）</td>
+    </tr>
+    <tr>
+      <td>最小権限の原則</td>
+      <td>運用者も必要以上のデータ閲覧権限を持たない</td>
+    </tr>
+    <tr>
+      <td>定期的な監査</td>
+      <td>収集データの棚卸しを四半期ごとに実施</td>
+    </tr>
+    <tr>
+      <td>パスワードレス認証</td>
+      <td>認証コード方式により、パスワードリスト攻撃のリスクを排除</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>第9条 未成年者のプライバシー</h2>
+
+<p>本サービスは、13歳未満の個人から<strong>意図的に情報を収集することはありません</strong>。</p>
+
+<ul>
+<li>13歳未満のユーザーが本サービスを利用する場合は、<strong>保護者の同意を得た上で</strong>使用するものとします。</li>
+<li>保護者がお子様の情報が収集されたと判断された場合は、abuse@hknw.linkまでご連絡ください。</li>
+</ul>
+
+<hr>
+
+<h2>第10条 プライバシーポリシーの変更</h2>
+
+<ol>
+<li>当運営は、法令の変更やサービス内容の変更に伴い、本ポリシーを予告なく変更することがあります。</li>
+<li>重要な変更がある場合は、本サービス上の掲示またはWebサイトへの掲載をもって通知します。</li>
+<li>変更後のポリシーは、本サービス上に掲載された時点から効力を生じるものとします。</li>
+</ol>
+
+<hr>
+
+<h2>第11条 データ漏洩時の対応</h2>
+
+<p>万が一、収集されたデータの漏洩が発生した場合：</p>
+
+<ol>
+<li><strong>影響範囲の調査</strong>: 漏洩した情報の特定と原因分析</li>
+<li><strong>ユーザーへの通知</strong>: 影響を受ける可能性のあるユーザーへの連絡（登録メールアドレスが存在する場合はメール通知、それ以外は本サービス上の掲示）</li>
+<li><strong>再発防止策</strong>: 技術的・運用面での対策実施</li>
+<li><strong>当局への報告</strong>: 日本の個人情報保護委員会など、法令に基づく報告</li>
+</ol>
+
+<hr>
+
+<h2>第12条 お問い合わせ窓口</h2>
+
+<p>本プライバシーポリシーに関するお問い合わせ、またはデータ処理に関する質問は、以下の連絡先までお願いいたします。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>目的</th>
+      <th>連絡先</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>プライバシー全般に関する問い合わせ</td>
+      <td>privacy@hknw.link</td>
+    </tr>
+    <tr>
+      <td>データ削除リクエスト</td>
+      <td>abuse@hknw.link</td>
+    </tr>
+    <tr>
+      <td>法的な問い合わせ</td>
+      <td>legal@hknw.link</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>対応目安</strong> : お問い合わせ送信後4日程度（土日祝除く）<br><strong>対応言語</strong>: 日本語、英語（応相談）</p>
+
+<hr>
+
+<h2>第13条 準拠法と管轄裁判所</h2>
+
+<ol>
+<li>本プライバシーポリシーの解釈および適用は、<strong>日本法</strong>に準拠するものとします。</li>
+<li>本プライバシーポリシーまたは本サービスの利用に関して、ユーザーと当運営の間で紛争が生じた場合、当運営の居住地を管轄する地方裁判所を第一審の専属的合意管轄裁判所とします。</li>
+</ol>
+
+        <div class="updated">最終更新日: 2026-01-15</div>
+        
+    <div class="related">
+      <h3 class="related-title">関連ドキュメント</h3>
+      <div class="related-list">
+        
+          <a href="/docs/terms" class="related-link">
+            <span>📋</span>
+            <span>利用規約</span>
+          </a>
+        
+          <a href="/docs/tokushoho" class="related-link">
+            <span>🏪</span>
+            <span>特定商取引法に基づく表記</span>
+          </a>
+        
+          <a href="/docs/disclaimer" class="related-link">
+            <span>⚠️</span>
+            <span>免責事項</span>
+          </a>
+        
+      </div>
+    </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="site-footer">
+    <div class="footer-links">
+      <a href="mailto:legal@hknw.link">legal@hknw.link</a>
+      <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
+      <a href="https://github.com/hknw/docs">GitHub</a>
+    </div>
+    <div class="copyright">
+      © 2026 HAKONIWA Studio. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
