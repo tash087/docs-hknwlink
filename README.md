@@ -11,5 +11,3 @@
 [Terms of Service](/docs/terms_en/)
 [Privacy Policy](/docs/privacy_en/)
 [Disclaimer](/docs/disclaimer_en/)
-
-## 開発
