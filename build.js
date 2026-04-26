@@ -1875,52 +1875,68 @@ function convertTableToHtml(rows) {
 }
 
 function processLists(text) {
-    let result = "";
-    let inOrderedList = false;
-    let inUnorderedList = false;
     const lines = text.split(/\r?\n/);
+    const stack = [];      // スタックで開いているリスト種別('ol'/'ul')を管理
+    const result = [];
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        const trimmedLine = line.trim();
-        const orderedMatch = trimmedLine.match(/^\d+\.\s+(.*)$/);
-        const unorderedMatch = trimmedLine.match(/^[\*\-]\s+(.*)$/);
+        if (line.trim() === '') {
+            // 空行はそのまま出力（ただし、リストを閉じたり開いたりはしない）
+            result.push('');
+            continue;
+        }
 
-        if (orderedMatch) {
-            if (!inOrderedList) {
-                if (inUnorderedList) {
-                    result += "</ul>\n";
-                    inUnorderedList = false;
-                }
-                result += "<ol>\n";
-                inOrderedList = true;
+        // 行頭のスペースの数（インデントレベル）を計算（全角スペースは考慮しない簡易版）
+        const leadingSpaces = line.match(/^ +/)?.[0].length || 0;
+        const indentLevel = Math.floor(leadingSpaces / 2);   // スペース2個で1レベルと仮定
+        const trimmed = line.trim();
+
+        // リストアイテムの検出
+        const orderedMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
+        const unorderedMatch = trimmed.match(/^[\*\-]\s+(.*)$/);
+
+        if (orderedMatch || unorderedMatch) {
+            const isOrdered = !!orderedMatch;
+            const content = isOrdered ? orderedMatch[2] : unorderedMatch[1];
+            const currentType = isOrdered ? 'ol' : 'ul';
+
+            // 現在のインデントレベルとスタックの深さを比較
+            while (stack.length > indentLevel) {
+                const prev = stack.pop();
+                result.push(`</${prev}>`);
             }
-            result += `<li>${orderedMatch[1]}</li>\n`;
-        } else if (unorderedMatch) {
-            if (!inUnorderedList) {
-                if (inOrderedList) {
-                    result += "</ol>\n";
-                    inOrderedList = false;
-                }
-                result += "<ul>\n";
-                inUnorderedList = true;
+            if (stack.length === 0) {
+                // 新規リスト開始
+                stack.push(currentType);
+                result.push(`<${currentType}>`);
+                result.push(`<li>${content}</li>`);
+            } else if (stack[stack.length - 1] === currentType) {
+                // 同じ階層・同じタイプのリスト → 次のアイテム
+                result.push(`<li>${content}</li>`);
+            } else {
+                // 同じ階層だけどタイプが異なる（例：ol → ul） → 一旦閉じて新しいタイプを開く
+                const prev = stack.pop();
+                result.push(`</${prev}>`);
+                stack.push(currentType);
+                result.push(`<${currentType}>`);
+                result.push(`<li>${content}</li>`);
             }
-            result += `<li>${unorderedMatch[1]}</li>\n`;
         } else {
-            if (inOrderedList) {
-                result += "</ol>\n";
-                inOrderedList = false;
+            // リストでない行 – 全てのリストを強制終了
+            while (stack.length) {
+                const prev = stack.pop();
+                result.push(`</${prev}>`);
             }
-            if (inUnorderedList) {
-                result += "</ul>\n";
-                inUnorderedList = false;
-            }
-            result += line + "\n";
+            result.push(line);
         }
     }
-    if (inOrderedList) result += "</ol>\n";
-    if (inUnorderedList) result += "</ul>\n";
-    return result;
+    // ファイル末尾で未閉じのリストをすべて閉じる
+    while (stack.length) {
+        const prev = stack.pop();
+        result.push(`</${prev}>`);
+    }
+    return result.join('\n');
 }
 
 function escapeHtml(text) {
