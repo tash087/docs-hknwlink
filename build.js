@@ -22,7 +22,7 @@ const documents = [
         description: '箱庭リンク（hknw.link）の利用規約です。サービスの利用条件、禁止行為、利用停止などについて定めています。',
         icon: '📋',
         order: 1,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-04-26'
     },
     {
         id: 'tokushoho',
