@@ -21,7 +21,7 @@ const documents = [
         description: '箱庭リンク（hknw.link）の利用規約です。サービスの利用条件、禁止行為、利用停止などについて定めています。',
         icon: '📋',
         order: 1,
-        updatedAt: '2026-04-26'
+        updatedAt: '2026-04-23'
     },
     {
         id: 'tokushoho',
@@ -679,11 +679,7 @@ function renderMarkdownToHtml(markdown, doc, currentPath) {
     // テーブル処理
     html = processTables(html);
 
-<<<<<<< HEAD
     // ★★★ 修正済みリスト処理（インデントを考慮） ★★★
-=======
-    // リスト処理（修正版）
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
     html = processLists(html);
 
     // 引用
@@ -1240,51 +1236,28 @@ function convertTableToHtml(rows) {
     return html;
 }
 
-<<<<<<< HEAD
 // ★★★ 完全修正版：インデント（スペース）を考慮したリスト処理 ★★★
 function processLists(text) {
     const lines = text.split(/\r?\n/);
     const stack = [];  // 要素: { type: 'ol'/'ul', indent: number }
     const result = [];
-=======
-// ★★★ 修正済み processLists 関数（ネストされたリストを正しく処理） ★★★
-function processLists(text) {
-    const lines = text.split(/\r?\n/);
-    const stack = []; // 開いている親リスト情報を管理
-    const result = [];
-    let inList = false;
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         if (line.trim() === '') {
-<<<<<<< HEAD
             // 空行で全てのリストを閉じる
             while (stack.length) {
                 const frame = stack.pop();
                 result.push(`</${frame.type}>`);
             }
-=======
-            // 空行: すべてのリストを終了
-            while (stack.length) {
-                const { type } = stack.pop();
-                result.push(`</li></${type}>`);
-            }
-            inList = false;
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
             result.push('');
             continue;
         }
 
-<<<<<<< HEAD
         // 行頭のスペース数をカウント（インデントレベル）
         const leadingSpaces = line.match(/^ +/)?.[0].length || 0;
         const indentLevel = Math.floor(leadingSpaces / 2);  // スペース2個で1レベル
 
-=======
-        const leadingSpaces = line.match(/^ +/)?.[0].length || 0;
-        const indentLevel = Math.floor(leadingSpaces / 2);
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
         const trimmed = line.trim();
         const orderedMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
         const unorderedMatch = trimmed.match(/^[\*\-]\s+(.*)$/);
@@ -1294,7 +1267,6 @@ function processLists(text) {
             const content = isOrdered ? orderedMatch[2] : unorderedMatch[1];
             const currentType = isOrdered ? 'ol' : 'ul';
 
-<<<<<<< HEAD
             // 1. 現在のインデントより深いリストは閉じる
             while (stack.length > 0 && stack[stack.length - 1].indent > indentLevel) {
                 const frame = stack.pop();
@@ -1334,52 +1306,6 @@ function processLists(text) {
         const frame = stack.pop();
         result.push(`</${frame.type}>`);
     }
-=======
-            // 現在の深さより深いリストをすべて閉じる
-            while (stack.length > 0 && stack[stack.length - 1].indent >= indentLevel) {
-                const { type } = stack.pop();
-                result.push(`</li></${type}>`);
-            }
-
-            // 同じ階層で新しいリストタイプなら、直前のアイテムを閉じて新規開始
-            if (stack.length === 0 || stack[stack.length - 1].indent < indentLevel) {
-                // 親があれば、親のliを閉じる前に子リストを開く準備
-                if (stack.length > 0 && !stack[stack.length - 1].childOpened) {
-                    // ここでは何もしない（子リストはこれから）
-                }
-                result.push(`<${currentType}>`);
-                stack.push({ type: currentType, indent: indentLevel, childOpened: false });
-                result.push(`<li>${content}`);
-            } 
-            else if (stack[stack.length - 1].type === currentType) {
-                // 同じタイプの次のアイテム
-                result.push(`</li><li>${content}`);
-            } 
-            else {
-                // 異なるタイプ（例: ol → ul）: 一旦閉じて新しいタイプ開始
-                const { type } = stack.pop();
-                result.push(`</li></${type}>`);
-                result.push(`<${currentType}>`);
-                stack.push({ type: currentType, indent: indentLevel, childOpened: false });
-                result.push(`<li>${content}`);
-            }
-        } else {
-            // リスト外テキスト: リストをすべて閉じる
-            while (stack.length) {
-                const { type } = stack.pop();
-                result.push(`</li></${type}>`);
-            }
-            inList = false;
-            result.push(line);
-        }
-    }
-
-    while (stack.length) {
-        const { type } = stack.pop();
-        result.push(`</li></${type}>`);
-    }
-
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
     return result.join('\n');
 }
 
@@ -1449,30 +1375,11 @@ async function build() {
     console.log('  📄 Generating sitemap.xml...');
     fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), generateSitemap());
 
-<<<<<<< HEAD
     const sourceImagesDir = path.join(__dirname, 'public', 'images');
     const destImagesDir = path.join(outputDir, 'images');
     if (!fs.existsSync(destImagesDir)) fs.mkdirSync(destImagesDir, { recursive: true });
 
     const imageFiles = ['hakoniwa_link_icon.png', 'docs_icon.png', 'service_icon.png', 'github_icon.png', 'discord_icon.png'];
-=======
-    // 4. 画像ファイルのコピー
-    const sourceImagesDir = path.join(__dirname, 'public', 'images');
-    const destImagesDir = path.join(outputDir, 'images');
-    
-    if (!fs.existsSync(destImagesDir)) {
-        fs.mkdirSync(destImagesDir, { recursive: true });
-    }
-    
-    const imageFiles = [
-        'hakoniwa_link_icon.png',
-        'docs_icon.png',
-        'service_icon.png',
-        'github_icon.png',
-        'discord_icon.png',
-    ];
-    
->>>>>>> cf9716546bca58afb482ffc655ce8442f2b980e4
     let copiedCount = 0;
     for (const imageFile of imageFiles) {
         const sourcePath = path.join(sourceImagesDir, imageFile);
