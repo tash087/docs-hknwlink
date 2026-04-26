@@ -952,7 +952,7 @@ function renderMarkdownToHtml(markdown, doc, currentPath) {
     // テーブル処理
     html = processTables(html);
 
-    // リスト処理
+    // リスト処理（修正版）
     html = processLists(html);
 
     // 引用
@@ -1874,25 +1874,29 @@ function convertTableToHtml(rows) {
     return html;
 }
 
+// ★★★ 修正済み processLists 関数（ネストされたリストを正しく処理） ★★★
 function processLists(text) {
     const lines = text.split(/\r?\n/);
-    const stack = [];      // スタックで開いているリスト種別('ol'/'ul')を管理
+    const stack = [];      // 要素: { type: 'ol'/'ul', indent: number, liOpened: boolean }
     const result = [];
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         if (line.trim() === '') {
-            // 空行はそのまま出力（ただし、リストを閉じたり開いたりはしない）
+            // 空行 → 全てのリストを閉じる
+            while (stack.length) {
+                const frame = stack.pop();
+                if (frame.liOpened) result.push('</li>');
+                result.push(`</${frame.type}>`);
+            }
             result.push('');
             continue;
         }
 
-        // 行頭のスペースの数（インデントレベル）を計算（全角スペースは考慮しない簡易版）
+        // インデント（スペース2個で1レベルと仮定）
         const leadingSpaces = line.match(/^ +/)?.[0].length || 0;
-        const indentLevel = Math.floor(leadingSpaces / 2);   // スペース2個で1レベルと仮定
+        const indentLevel = Math.floor(leadingSpaces / 2);
         const trimmed = line.trim();
-
-        // リストアイテムの検出
         const orderedMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
         const unorderedMatch = trimmed.match(/^[\*\-]\s+(.*)$/);
 
@@ -1901,40 +1905,51 @@ function processLists(text) {
             const content = isOrdered ? orderedMatch[2] : unorderedMatch[1];
             const currentType = isOrdered ? 'ol' : 'ul';
 
-            // 現在のインデントレベルとスタックの深さを比較
-            while (stack.length > indentLevel) {
-                const prev = stack.pop();
-                result.push(`</${prev}>`);
+            // 1) 現在の深さより深いリストをすべて閉じる
+            while (stack.length > 0 && stack[stack.length - 1].indent > indentLevel) {
+                const frame = stack.pop();
+                if (frame.liOpened) result.push('</li>');
+                result.push(`</${frame.type}>`);
             }
-            if (stack.length === 0) {
-                // 新規リスト開始
-                stack.push(currentType);
-                result.push(`<${currentType}>`);
-                result.push(`<li>${content}</li>`);
-            } else if (stack[stack.length - 1] === currentType) {
-                // 同じ階層・同じタイプのリスト → 次のアイテム
-                result.push(`<li>${content}</li>`);
+
+            // 2) 同じ深さでタイプが異なる場合、ひとつ前を閉じて新しいタイプを開始
+            if (stack.length > 0 && stack[stack.length - 1].indent === indentLevel && stack[stack.length - 1].type !== currentType) {
+                const frame = stack.pop();
+                if (frame.liOpened) result.push('</li>');
+                result.push(`</${frame.type}>`);
+            }
+
+            // 3) 同じ深さ・同じタイプの継続か、新規リスト開始かを判定
+            if (stack.length > 0 && stack[stack.length - 1].indent === indentLevel && stack[stack.length - 1].type === currentType) {
+                // 同じリスト内の次のアイテム → 前のliを閉じて新しいliを開く
+                result.push('</li>');
+                result.push(`<li>${content}`);
+                stack[stack.length - 1].liOpened = true;
             } else {
-                // 同じ階層だけどタイプが異なる（例：ol → ul） → 一旦閉じて新しいタイプを開く
-                const prev = stack.pop();
-                result.push(`</${prev}>`);
-                stack.push(currentType);
+                // 新しいリストを開始する場合、親があればそのliを開く
+                if (stack.length > 0 && stack[stack.length - 1].indent < indentLevel && !stack[stack.length - 1].liOpened) {
+                    result.push(`<li>`);
+                    stack[stack.length - 1].liOpened = true;
+                }
                 result.push(`<${currentType}>`);
-                result.push(`<li>${content}</li>`);
+                result.push(`<li>${content}`);
+                stack.push({ type: currentType, indent: indentLevel, liOpened: true });
             }
         } else {
-            // リストでない行 – 全てのリストを強制終了
+            // リストでない行 → 全てのリストを閉じてからその行を出力
             while (stack.length) {
-                const prev = stack.pop();
-                result.push(`</${prev}>`);
+                const frame = stack.pop();
+                if (frame.liOpened) result.push('</li>');
+                result.push(`</${frame.type}>`);
             }
             result.push(line);
         }
     }
-    // ファイル末尾で未閉じのリストをすべて閉じる
+    // ファイル末尾で未閉じのリストを全て閉じる
     while (stack.length) {
-        const prev = stack.pop();
-        result.push(`</${prev}>`);
+        const frame = stack.pop();
+        if (frame.liOpened) result.push('</li>');
+        result.push(`</${frame.type}>`);
     }
     return result.join('\n');
 }
@@ -2014,24 +2029,20 @@ async function build() {
     const sitemap = generateSitemap();
     fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), sitemap);
 
-    // 4. 画像ファイルのコピー（複数対応）
+    // 4. 画像ファイルのコピー
     const sourceImagesDir = path.join(__dirname, 'public', 'images');
     const destImagesDir = path.join(outputDir, 'images');
     
-    // 出力先ディレクトリが存在することを確認
     if (!fs.existsSync(destImagesDir)) {
         fs.mkdirSync(destImagesDir, { recursive: true });
     }
     
-    // コピーする画像ファイルのリスト
     const imageFiles = [
-        'hakoniwa_link_icon.png',   // ファビコン・ロゴ用
-        'docs_icon.png',            // ドキュメントアイコン用
-        'service_icon.png',        // サービスアイコン用
-        'github_icon.png',          // GitHubアイコン用
-        'discord_icon.png',         // Discordアイコン用
-        // 'logo.png',              // 必要に応じて追加
-        // 'ogp.png',               // OGP画像など
+        'hakoniwa_link_icon.png',
+        'docs_icon.png',
+        'service_icon.png',
+        'github_icon.png',
+        'discord_icon.png',
     ];
     
     let copiedCount = 0;
