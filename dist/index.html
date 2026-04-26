@@ -9,27 +9,15 @@
   <title>ドキュメント | HAKONIWA Link</title>
   <style>
 /* ============================================================
-   ドキュメント一覧ページ用スタイル（画像ロゴ対応版）
-   - トップページ（ポータル）用
-   - カテゴリー別ドキュメントリスト + 検索機能
+   ドキュメント一覧ページ用スタイル
    ============================================================ */
-
-/* リセット */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ベース設定 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   background: #f5f5f7;
   color: #1a1a2e;
   line-height: 1.6;
 }
-
-/* ========== ヘッダー（共通・画像ロゴ対応） ========== */
 .site-header {
   background: #2c2c2e;
   border-bottom: 1px solid #3a3a3c;
@@ -37,7 +25,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .header-inner {
   max-width: 1000px;
   margin: 0 auto;
@@ -48,59 +35,46 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-/* ロゴエリア（画像 + テキスト） */
 .logo a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
 }
-
-/* 画像ロゴ用ラッパー */
 .logo-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-
-/* 画像ロゴそのもの */
 .logo-icon {
   width: 36px;
   height: 36px;
   display: block;
   object-fit: contain;
 }
-
-/* テキストロゴ（メイン＋サブ） */
 .logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
-
 .logo-main {
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
   letter-spacing: 0.5px;
 }
-
 .logo-sub {
   font-size: 0.65rem;
   color: #a0aec0;
   letter-spacing: 0.3px;
 }
-
-/* ヘッダーナビゲーションリンク */
 .nav-links {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .nav-link {
   color: #cbd5e0;
   text-decoration: none;
@@ -108,51 +82,33 @@ body {
   transition: color 0.2s;
   padding: 0.5rem 0;
 }
-
-.nav-link:hover {
-  color: white;
-}
-
-/* アクティブなリンク（現在地を示す） */
+.nav-link:hover { color: white; }
 .nav-link.active {
   color: white;
   border-bottom: 2px solid white;
 }
-
-/* Discord専用ボタンスタイル */
 .nav-link.discord {
   background: #5865f2;
   padding: 0.4rem 1rem;
   border-radius: 8px;
   color: white;
 }
-
-.nav-link.discord:hover {
-  background: #4752c4;
-  color: white;
-}
-
-/* ========== メインコンテンツエリア ========== */
+.nav-link.discord:hover { background: #4752c4; }
 .main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
-
-/* ========== ページタイトル ========== */
 .page-title {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e0e0e0;
 }
-
 .page-title h1 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #1a1a2e;
 }
-
-/* ========== 統計バー ========== */
 .stats {
   background: white;
   border-radius: 12px;
@@ -162,29 +118,23 @@ body {
   gap: 2rem;
   margin-bottom: 2rem;
 }
-
 .stat {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
 }
-
 .stat-number {
   font-size: 1.5rem;
   font-weight: 600;
   color: #2c2c2e;
 }
-
 .stat-label {
   font-size: 0.8rem;
   color: #888;
 }
-
-/* ========== 検索ボックス ========== */
 .search {
   margin-bottom: 2rem;
 }
-
 .search input {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -193,18 +143,9 @@ body {
   border-radius: 10px;
   background: white;
   outline: none;
-  transition: border-color 0.2s;
 }
-
-.search input:focus {
-  border-color: #2c2c2e;
-}
-
-/* ========== カテゴリーセクション ========== */
-.category {
-  margin-bottom: 2rem;
-}
-
+.search input:focus { border-color: #2c2c2e; }
+.category { margin-bottom: 2rem; }
 .category-title {
   font-size: 1.2rem;
   font-weight: 600;
@@ -213,16 +154,12 @@ body {
   padding-left: 0.5rem;
   border-left: 3px solid #2c2c2e;
 }
-
-/* ========== ドキュメントリスト ========== */
 .doc-list {
   background: white;
   border-radius: 12px;
   border: 1px solid #e8e8ec;
   overflow: hidden;
 }
-
-/* 各ドキュメントのリンクカード */
 .doc-link {
   display: flex;
   align-items: center;
@@ -232,28 +169,13 @@ body {
   border-bottom: 1px solid #f0f0f0;
   transition: background 0.2s;
 }
-
-/* 最後の項目はボーダーなし */
-.doc-link:last-child {
-  border-bottom: none;
-}
-
-/* ホバー時の背景色 */
-.doc-link:hover {
-  background: #f8f8fa;
-}
-
-/* アイコン */
+.doc-link:last-child { border-bottom: none; }
+.doc-link:hover { background: #f8f8fa; }
 .doc-icon {
   font-size: 1.25rem;
   min-width: 28px;
 }
-
-/* タイトル + 説明文エリア */
-.doc-info {
-  flex: 1;
-}
-
+.doc-info { flex: 1; }
 .doc-title {
   display: block;
   font-size: 0.95rem;
@@ -261,33 +183,25 @@ body {
   color: #1a1a2e;
   margin-bottom: 0.2rem;
 }
-
 .doc-desc {
   display: block;
   font-size: 0.8rem;
   color: #888;
 }
-
-/* 矢印アイコン */
 .doc-arrow {
   color: #ccc;
   font-size: 0.9rem;
   transition: transform 0.2s;
 }
-
 .doc-link:hover .doc-arrow {
   transform: translateX(3px);
   color: #2c2c2e;
 }
-
-/* ========== 検索結果なし表示 ========== */
 .no-results {
   text-align: center;
   padding: 3rem;
   color: #888;
 }
-
-/* ========== フッター（修正箇所） ========== */
 .site-footer {
   border-top: 1px solid #e0e0e0;
   background: white;
@@ -295,8 +209,6 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-
-/* フッター内のナビゲーションリンク群 */
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -304,233 +216,80 @@ body {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 .footer-links a {
   color: #555;
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.2s;
 }
-
 .footer-links a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
-/* フッターの著作権・連絡先 */
 .footer-info {
   font-size: 0.75rem;
   color: #aaa;
   line-height: 1.6;
 }
-
 .footer-info a {
   color: #888;
   text-decoration: none;
 }
-
 .footer-info a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
-/* ========== ダークモード対応 ========== */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #1a1a2e;
-  }
-
-  .doc-list {
-    background: #2d2d44;
-    border-color: #3a3a5a;
-  }
-
-  .doc-link {
-    border-bottom-color: #3a3a5a;
-  }
-
-  .doc-link:hover {
-    background: #3a3a5a;
-  }
-
-  .doc-title {
-    color: #e2e8f0;
-  }
-
-  .doc-desc {
-    color: #a0aec0;
-  }
-
-  .stats {
-    background: #2d2d44;
-    border-color: #3a3a5a;
-  }
-
-  .stat-number {
-    color: #e2e8f0;
-  }
-
-  .stat-label {
-    color: #a0aec0;
-  }
-
-  .search input {
-    background: #2d2d44;
-    border-color: #3a3a5a;
-    color: white;
-  }
-
-  .search input:focus {
-    border-color: #a0aec0;
-  }
-
-  .page-title {
-    border-bottom-color: #3a3a5a;
-  }
-
-  .page-title h1 {
-    color: #e2e8f0;
-  }
-
-  .category-title {
-    color: #e2e8f0;
-    border-left-color: #a0aec0;
-  }
-
-  .site-footer {
-    border-top-color: #3a3a5a;
-    background: #1a1a2e;
-  }
-
-  .footer-links a {
-    color: #9ca3af;
-  }
-
-  .footer-links a:hover {
-    color: #e2e8f0;
-  }
-
-  .footer-info {
-    color: #6b7280;
-  }
-
-  .footer-info a {
-    color: #9ca3af;
-  }
-
-  .footer-info a:hover {
-    color: #e2e8f0;
-  }
-
-  .doc-arrow {
-    color: #4a5568;
-  }
-
-  .doc-link:hover .doc-arrow {
-    color: #a0aec0;
-  }
-
-  /* ヘッダーダーク時補正 */
-  .logo-sub {
-    color: #9ca3af;
-  }
+  body { background: #1a1a2e; }
+  .doc-list { background: #2d2d44; border-color: #3a3a5a; }
+  .doc-link { border-bottom-color: #3a3a5a; }
+  .doc-link:hover { background: #3a3a5a; }
+  .doc-title { color: #e2e8f0; }
+  .doc-desc { color: #a0aec0; }
+  .stats { background: #2d2d44; border-color: #3a3a5a; }
+  .stat-number { color: #e2e8f0; }
+  .stat-label { color: #a0aec0; }
+  .search input { background: #2d2d44; border-color: #3a3a5a; color: white; }
+  .page-title { border-bottom-color: #3a3a5a; }
+  .page-title h1 { color: #e2e8f0; }
+  .category-title { color: #e2e8f0; border-left-color: #a0aec0; }
+  .site-footer { border-top-color: #3a3a5a; background: #1a1a2e; }
+  .footer-links a { color: #9ca3af; }
+  .footer-links a:hover { color: #e2e8f0; }
+  .footer-info { color: #6b7280; }
+  .footer-info a { color: #9ca3af; }
+  .footer-info a:hover { color: #e2e8f0; }
+  .doc-arrow { color: #4a5568; }
+  .doc-link:hover .doc-arrow { color: #a0aec0; }
+  .logo-sub { color: #9ca3af; }
 }
-
-/* ========== レスポンシブ対応（スマホ） ========== */
 @media (max-width: 768px) {
-  .main {
-    padding: 1rem;
-  }
-
-  .page-title h1 {
-    font-size: 1.4rem;
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* スマホでのロゴ調整 */
-  .logo a {
-    justify-content: center;
-  }
-
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo-main {
-    font-size: 0.95rem;
-  }
-
-  .logo-sub {
-    font-size: 0.55rem;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-  }
-
-  .nav-link.discord {
-    padding: 0.3rem 0.8rem;
-  }
-
-  .doc-link {
-    padding: 0.75rem 1rem;
-  }
-
-  /* スマホでは説明文を非表示（省スペース） */
-  .doc-desc {
-    display: none;
-  }
-
-  /* フッターリンクを縦並びに */
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
+  .main { padding: 1rem; }
+  .page-title h1 { font-size: 1.4rem; }
+  .stats { flex-direction: column; gap: 0.75rem; }
+  .header-inner { flex-direction: column; text-align: center; }
+  .logo a { justify-content: center; }
+  .logo-icon { width: 28px; height: 28px; }
+  .logo-main { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.55rem; }
+  .nav-links { justify-content: center; gap: 1rem; }
+  .nav-link { font-size: 0.8rem; }
+  .nav-link.discord { padding: 0.3rem 0.8rem; }
+  .doc-link { padding: 0.75rem 1rem; }
+  .doc-desc { display: none; }
+  .footer-links { flex-direction: column; gap: 0.5rem; align-items: center; }
 }
-
-/* ========== 印刷用スタイル ========== */
 @media print {
-  body {
-    background: white;
-  }
-
-  .site-header,
-  .search,
-  .stats,
-  .site-footer {
-    display: none;
-  }
-
-  .doc-list {
-    border: none;
-  }
-
-  .doc-link {
-    border-bottom: 1px solid #ccc;
-  }
+  body { background: white; }
+  .site-header, .search, .stats, .site-footer { display: none; }
+  .doc-list { border: none; }
+  .doc-link { border-bottom: 1px solid #ccc; }
 }
     </style>
 </head>
@@ -550,25 +309,21 @@ body {
       </div>
       <div class="nav-links">
         <a href="/" class="nav-link active">
-            <div class="logo-icon-wrapper">
-            <img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon">
-          </div>
-         ドキュメント</a>
-        <a href="https://hknw.link" target="_blank" class="nav-link active">
-          <div class="logo-icon-wrapper">
-            <img src="/images/service_icon.png" alt="サービス" class="logo-icon">
-          </div>
-          サービス</a>
-        <a href="#準備中-github" target="_blank" class="nav-link active">
-                  <div class="logo-icon-wrapper">
-            <img src="/images/github_icon.png" alt="GitHub" class="logo-icon">
-          </div>
-          GitHub(準備中)</a>
-        <a href="#準備中-discord" target="_blank" class="nav-link active discord">
-          <div class="logo-icon-wrapper">
-            <img src="/images/discord_icon.png" alt="Discord" class="logo-icon">
-          </div>
-          Discord(準備中)</a>
+          <div class="logo-icon-wrapper"><img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon"></div>
+          ドキュメント
+        </a>
+        <a href="https://hknw.link" target="_blank" class="nav-link">
+          <div class="logo-icon-wrapper"><img src="/images/service_icon.png" alt="サービス" class="logo-icon"></div>
+          サービス
+        </a>
+        <a href="#" class="nav-link">
+          <div class="logo-icon-wrapper"><img src="/images/github_icon.png" alt="GitHub" class="logo-icon"></div>
+          GitHub(準備中)
+        </a>
+        <a href="#" class="nav-link discord">
+          <div class="logo-icon-wrapper"><img src="/images/discord_icon.png" alt="Discord" class="logo-icon"></div>
+          Discord(準備中)
+        </a>
       </div>
     </div>
   </div>
@@ -684,31 +439,30 @@ body {
     </div>
   </div>
   
-<div class="site-footer">
-  <div class="footer-nav">
-    <div class="footer-links">
-      <a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a>
+  <div class="site-footer">
+    <div class="footer-nav">
+      <div class="footer-links">
+        <a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-links">
+        <a href="/docs/terms">📋 利用規約</a>
+        <a href="/docs/disclaimer">⚠️ 免責事項</a>
+        <a href="/docs/privacy">🔒 プライバシーポリシー</a>
+      </div>
+      <div class="footer-links">
+        <a href="/docs/terms_en">📋 Terms of Service</a>
+        <a href="/docs/disclaimer_en">⚠️ Disclaimer</a>
+        <a href="/docs/privacy_en">🔒 Privacy Policy</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="/docs/terms">📋 利用規約</a>
-      <a href="/docs/disclaimer">⚠️ 免責事項</a>
-      <a href="/docs/privacy">🔒 プライバシーポリシー</a>
-    </div>
-    <div class="footer-links">
-      <a href="/docs/terms_en">📋 Terms of Service</a>
-      <a href="/docs/disclaimer_en">⚠️ Disclaimer</a>
-      <a href="/docs/privacy_en">🔒 Privacy Policy</a>
+    <div class="footer-info">
+      <p>© 2026 HAKONIWA Studio All Rights Reserved.<br>Designed and Developed by HAKONIWA Studio.</p>
+      <p>
+        <a href="mailto:legal@hknw.link">legal@hknw.link</a> | 
+        <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
+      </p>
     </div>
   </div>
-  <div class="footer-info">
-    <p>        © 2026 HAKONIWA Studio All Rights Reserved.<br>
-        Designed and Developed by HAKONIWA Studio.</p>
-    <p>
-      <a href="mailto:legal@hknw.link">legal@hknw.link</a> | 
-      <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
-    </p>
-  </div>
-</div>
   
   <script>
     const searchInput = document.getElementById('searchInput');
@@ -738,7 +492,6 @@ body {
         if (!grouped[doc.category]) grouped[doc.category] = [];
         grouped[doc.category].push(doc);
       }
-      
       let html = '';
       for (const catId of categoryOrder) {
         if (grouped[catId] && grouped[catId].length > 0) {
@@ -764,25 +517,21 @@ body {
     
     function performSearch() {
       const query = searchInput.value.toLowerCase().trim();
-      
       if (query === '') {
         categoriesContainer.innerHTML = renderCategories(allDocs);
         noResults.style.display = 'none';
         return;
       }
-      
       const filtered = allDocs.filter(doc => 
         doc.title.toLowerCase().includes(query) ||
         doc.description.toLowerCase().includes(query) ||
         doc.categoryName.toLowerCase().includes(query)
       );
-      
       if (filtered.length === 0) {
         categoriesContainer.innerHTML = '';
         noResults.style.display = 'block';
         return;
       }
-      
       noResults.style.display = 'none';
       categoriesContainer.innerHTML = renderCategories(filtered);
     }

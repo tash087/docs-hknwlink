@@ -34,11 +34,9 @@ In these Terms, the following terms shall have the meanings specified below:
 ## Article 3: User Registration and Login
 
 1. Users may log in and register by sending their email address using a method specified by us and entering the "verification code" sent to that email address.
-
 2. The Service provides the following features to logged-in "Registered Users":
    - **Data Synchronization**: Sharing of created shortened URL lists across multiple devices logged in with the same email address.
    - **Statistics Management**: Continuous access to statistical information for each shortened URL.
-
 3. Users shall carefully manage their own email address and the verification codes sent to them. We assume no responsibility whatsoever for any damages caused by unauthorized use of an email address by a third party.
 
 ---
@@ -97,9 +95,7 @@ Access to invalidated shortened URLs will result in an error page (404 or invali
    - Country/region of access source (based on Cloudflare-provided data)
    - Referrer (source website)
    - Total click count
-
 2. **Registered Users** can view and manage statistical information for shortened URLs created with the same email address from their own dashboard.
-
 3. Personally identifiable information (IP addresses, browser fingerprints, device IDs, cookies, etc.) is **not collected** for statistical purposes under this Article. Please see our [Privacy Policy](/en/privacy) for details.
 
 ---
@@ -108,21 +104,22 @@ Access to invalidated shortened URLs will result in an error page (404 or invali
 
 The Service offers the following plans:
 
-| Plan | Price | Main Features |
-|------|-------|----------------|
-| **Free Plan** | 0 JPY | URL shortening, landing page (with ads), basic statistics |
-| **Studio Plan** | To be determined | Ad-free, detailed statistics, priority support, etc. |
+| Plan | Price (tax included) | Redirect Wait Time | Max Links | Daily Limit | Ads | Priority Support | API | Detailed Analytics |
+|------|---------------------|-------------------|-----------|-------------|-----|------------------|-----|---------------------|
+| **Free Plan** | 0 JPY | 5 seconds | 10 | 3 | Yes | No | No | No |
+| **Pro Plan** | 1,000 JPY/month | 2 seconds | 100 | 20 | No | Yes | No | No |
+| **Business Plan** | 5,000 JPY/month | 0 seconds (instant) | Unlimited | 500 | No | Yes | Yes | Yes |
 
-※ Detailed pricing and features of the Studio Plan will be displayed separately on the Service.
+※ Prices are subject to change without notice. Revised prices will take effect upon posting on the Service.
 
 ---
 
 ## Article 8: Advertising Display
 
 1. Under the **Free Plan**, advertisements may be displayed on the "Landing Page" when a shortened URL is accessed.
-2. Ad content is provided by us or our partner advertisers. We assume no responsibility whatsoever for ad content.
-3. Users agree not to use means of avoiding ad display (such as ad blockers).
-4. The **Studio Plan** offers an ad-free option.
+2. The **Pro Plan** and **Business Plan** offer an ad-free option.
+3. Ad content is provided by us or our partner advertisers. We assume no responsibility whatsoever for ad content.
+4. We do not recommend the use of ad blockers to maintain ad display, but we do not prohibit Users from using them.
 
 ---
 
@@ -147,7 +144,26 @@ We shall not be liable for any damages incurred by Users or third parties result
 
 ---
 
-## Article 11: Changes to Terms
+## Article 11: Refunds and Cancellation
+
+1. Paid plans (Pro Plan, Business Plan) are monthly subscriptions (recurring billing).
+2. Cancellation must be performed by the User themselves through the Service settings by the day before the next billing date.
+3. Due to the nature of digital services, **refunds for monthly fees already paid are generally not accepted** (pro-rated refunds are also not provided).
+4. If cancellation occurs during a free trial period, no charges will apply.
+5. After cancellation, the account will be downgraded to the Free Plan.
+
+---
+
+## Article 12: Disclaimer
+
+1. We assume no responsibility whatsoever for the content of Destination URLs.
+2. We assume no responsibility for any damages arising from a User's violation of Article 4 (Prohibited Activities).
+3. The Service is provided "AS-IS," and we make no warranties regarding its completeness, accuracy, safety, or fitness for a particular purpose.
+4. We assume no responsibility for damages resulting from server downtime, network failures, third-party attacks, or other events that render the Service unavailable.
+
+---
+
+## Article 13: Changes to Terms
 
 1. We may change these Terms as necessary.
 2. The revised Terms shall become effective upon posting on the Service or our website.
@@ -156,14 +172,14 @@ We shall not be liable for any damages incurred by Users or third parties result
 
 ---
 
-## Article 12: Governing Law and Jurisdiction
+## Article 14: Governing Law and Jurisdiction
 
 1. The interpretation and application of these Terms shall be governed by **the laws of Japan**.
-2. If any dispute arises between a User and us regarding these Terms or the use of the Service, the exclusive governing court for first-instance jurisdiction shall be the district court that has jurisdiction over our place of residence.
+2. If any dispute arises between a User and us regarding these Terms or the use of the Service, the district court having jurisdiction over our place of residence shall be the exclusive court of first instance.
 
 ---
 
-## Article 13: Contact Methods
+## Article 15: Contact Methods
 
 Users may contact us using the following email addresses:
 
@@ -178,6 +194,10 @@ Users may contact us using the following email addresses:
 
 ---
 
-## Article 14: Severability
+## Article 16: Severability
 
 If any provision of these Terms is determined to be invalid or unenforceable under applicable law, the remaining provisions shall continue in full force and effect.
+
+---
+
+**Effective Date: April 22, 2026**

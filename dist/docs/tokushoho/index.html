@@ -9,26 +9,15 @@
   <title>特定商取引法に基づく表記 | HAKONIWA Link</title>
   <style>
  /* ============================================================
-   個別ドキュメントページ用スタイル（画像ロゴ対応版）
-   - 利用規約、プライバシーポリシーなどの本文表示用
+   個別ドキュメントページ用スタイル
    ============================================================ */
-
-/* リセット */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ベース設定 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   background: #f5f5f7;
   color: #1a1a2e;
   line-height: 1.7;
 }
-
-/* ========== ヘッダー（共通・画像ロゴ対応） ========== */
 .site-header {
   background: #2c2c2e;
   border-bottom: 1px solid #3a3a3c;
@@ -36,7 +25,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .header-inner {
   max-width: 1000px;
   margin: 0 auto;
@@ -47,59 +35,46 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-/* ロゴエリア（画像 + テキスト） */
 .logo a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
 }
-
-/* 画像ロゴ用ラッパー */
 .logo-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-
-/* 画像ロゴそのもの */
 .logo-icon {
   width: 36px;
   height: 36px;
   display: block;
   object-fit: contain;
 }
-
-/* テキストロゴ（メイン＋サブ） */
 .logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
-
 .logo-main {
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
   letter-spacing: 0.5px;
 }
-
 .logo-sub {
   font-size: 0.65rem;
   color: #a0aec0;
   letter-spacing: 0.3px;
 }
-
-/* ナビゲーションリンク（全共通） */
 .nav-links {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .nav-link {
   color: #cbd5e0;
   text-decoration: none;
@@ -107,46 +82,29 @@ body {
   transition: color 0.2s;
   padding: 0.5rem 0;
 }
-
-.nav-link:hover {
-  color: white;
-}
-
-/* アクティブなリンク（現在地を示す） */
+.nav-link:hover { color: white; }
 .nav-link.active {
   color: white;
   border-bottom: 2px solid white;
 }
-
-/* Discord専用ボタンスタイル（任意） */
 .nav-link.discord {
   background: #5865f2;
   padding: 0.4rem 1rem;
   border-radius: 8px;
   color: white;
 }
-
-.nav-link.discord:hover {
-  background: #4752c4;
-  color: white;
-}
-
-/* ========== メインコンテンツエリア ========== */
+.nav-link.discord:hover { background: #4752c4; }
 .main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
-
-/* コンテンツカード */
 .content-card {
   background: white;
   border-radius: 12px;
   border: 1px solid #e8e8ec;
   overflow: hidden;
 }
-
-/* ========== パンくずリスト ========== */
 .breadcrumb {
   padding: 1rem 2rem;
   background: #fafafc;
@@ -154,44 +112,29 @@ body {
   font-size: 0.85rem;
   color: #888;
 }
-
 .breadcrumb a {
   color: #666;
   text-decoration: none;
 }
-
 .breadcrumb a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
 .breadcrumb .separator {
   margin: 0 0.5rem;
   color: #ccc;
 }
-
-/* ========== 戻るリンク ========== */
 .back-link {
   padding: 1rem 2rem 0 2rem;
 }
-
 .back-link a {
   display: inline-block;
   color: #888;
   text-decoration: none;
   font-size: 0.85rem;
 }
-
-.back-link a:hover {
-  color: #2c2c2e;
-}
-
-/* ========== 本文コンテンツ ========== */
-.content {
-  padding: 2rem;
-}
-
-/* 見出し */
+.back-link a:hover { color: #2c2c2e; }
+.content { padding: 2rem; }
 .content h1 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -200,7 +143,6 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #e8e8ec;
 }
-
 .content h2 {
   font-size: 1.3rem;
   font-weight: 600;
@@ -209,40 +151,30 @@ body {
   padding-left: 0.75rem;
   border-left: 3px solid #2c2c2e;
 }
-
 .content h3 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #2c2c2e;
   margin: 1.25rem 0 0.5rem 0;
 }
-
 .content h4 {
   font-size: 1rem;
   font-weight: 600;
   color: #3a3a3e;
   margin: 1rem 0 0.5rem 0;
 }
-
-/* 段落 */
 .content p {
   margin-bottom: 1rem;
   color: #3a3a3e;
   line-height: 1.7;
 }
-
-/* リスト */
-.content ul,
-.content ol {
+.content ul, .content ol {
   margin: 0.75rem 0 1rem 1.5rem;
 }
-
 .content li {
   margin-bottom: 0.25rem;
   color: #3a3a3e;
 }
-
-/* 引用ブロック */
 .content blockquote {
   background: #f8f8fa;
   border-left: 3px solid #2c2c2e;
@@ -252,8 +184,6 @@ body {
   color: #555;
   font-size: 0.9rem;
 }
-
-/* インラインコード */
 .content code {
   background: #f0f0f4;
   padding: 0.2rem 0.4rem;
@@ -262,8 +192,6 @@ body {
   font-size: 0.85rem;
   color: #c0392b;
 }
-
-/* コードブロック */
 .content pre {
   background: #1e1e2e;
   padding: 1rem;
@@ -271,22 +199,18 @@ body {
   overflow-x: auto;
   margin: 1rem 0;
 }
-
 .content pre code {
   background: none;
   color: #e2e8f0;
   padding: 0;
   font-size: 0.85rem;
 }
-
-/* テーブル */
 .content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
   border: 1px solid #e8e8ec;
 }
-
 .content th {
   background: #f8f8fa;
   padding: 0.75rem;
@@ -294,55 +218,39 @@ body {
   font-weight: 600;
   border-bottom: 1px solid #e8e8ec;
 }
-
 .content td {
   padding: 0.75rem;
   border-bottom: 1px solid #f0f0f0;
 }
-
-.content tr:last-child td {
-  border-bottom: none;
-}
-
-/* 水平線 */
+.content tr:last-child td { border-bottom: none; }
 .content hr {
   margin: 1.5rem 0;
   border: none;
   height: 1px;
   background: #e8e8ec;
 }
-
-/* リンク */
 .content a {
   color: #2c2c2e;
   text-decoration: none;
   border-bottom: 1px solid #d0d0d0;
 }
-
-.content a:hover {
-  border-bottom-color: #2c2c2e;
-}
-
-/* ========== 関連ドキュメント ========== */
+.content a:hover { border-bottom-color: #2c2c2e; }
 .related {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #e8e8ec;
 }
-
 .related-title {
   font-size: 0.85rem;
   font-weight: 600;
   color: #888;
   margin-bottom: 0.75rem;
 }
-
 .related-list {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .related-link {
   display: inline-flex;
   align-items: center;
@@ -355,13 +263,10 @@ body {
   color: #3a3a3e;
   transition: background 0.2s;
 }
-
 .related-link:hover {
   background: #e8e8ec;
   border-bottom: none;
 }
-
-/* ========== 更新日表示 ========== */
 .updated {
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -370,8 +275,6 @@ body {
   text-align: right;
   border-top: 1px solid #e8e8ec;
 }
-
-/* ========== フッター（整理済み） ========== */
 .site-footer {
   border-top: 1px solid #e0e0e0;
   background: white;
@@ -379,7 +282,6 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -387,294 +289,94 @@ body {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 .footer-links a {
   color: #555;
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.2s;
 }
-
 .footer-links a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
 .footer-info {
   font-size: 0.75rem;
   color: #aaa;
   line-height: 1.6;
 }
-
 .footer-info a {
   color: #888;
   text-decoration: none;
 }
-
 .footer-info a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
-/* ========== ダークモード対応（フル） ========== */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #1a1a2e;
-  }
-
-  .content-card {
-    background: #2d2d44;
-    border-color: #3a3a5a;
-  }
-
-  .breadcrumb {
-    background: #25253a;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .breadcrumb a {
-    color: #a0aec0;
-  }
-
-  .breadcrumb a:hover {
-    color: #e2e8f0;
-  }
-
-  .content h1 {
-    color: #e2e8f0;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .content h2 {
-    color: #e2e8f0;
-    border-left-color: #a0aec0;
-  }
-
-  .content h3 {
-    color: #cbd5e0;
-  }
-
-  .content p,
-  .content li {
-    color: #cbd5e0;
-  }
-
-  .content blockquote {
-    background: #25253a;
-    color: #a0aec0;
-  }
-
-  .content code {
-    background: #25253a;
-    color: #fc8181;
-  }
-
-  .content pre {
-    background: #0f0f1a;
-  }
-
-  .content table {
-    border-color: #3a3a5a;
-  }
-
-  .content th {
-    background: #25253a;
-    color: #e2e8f0;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .content td {
-    border-bottom-color: #3a3a5a;
-    color: #cbd5e0;
-  }
-
-  .content hr {
-    background: #3a3a5a;
-  }
-
-  .content a {
-    color: #a0aec0;
-    border-bottom-color: #4a5568;
-  }
-
-  .content a:hover {
-    border-bottom-color: #a0aec0;
-  }
-
-  .related {
-    border-top-color: #3a3a5a;
-  }
-
-  .related-title {
-    color: #888;
-  }
-
-  .related-link {
-    background: #25253a;
-    color: #cbd5e0;
-  }
-
-  .related-link:hover {
-    background: #3a3a5a;
-  }
-
-  .updated {
-    border-top-color: #3a3a5a;
-    color: #666;
-  }
-
-  .site-footer {
-    border-top-color: #3a3a5a;
-    background: #1a1a2e;
-  }
-
-  .footer-links a {
-    color: #9ca3af;
-  }
-
-  .footer-links a:hover {
-    color: #e2e8f0;
-  }
-
-  .footer-info {
-    color: #6b7280;
-  }
-
-  .footer-info a {
-    color: #9ca3af;
-  }
-
-  .footer-info a:hover {
-    color: #e2e8f0;
-  }
-
-  .back-link a {
-    color: #888;
-  }
-
-  .back-link a:hover {
-    color: #e2e8f0;
-  }
-
-  /* ヘッダーダーク時補正（画像ロゴ透過推奨） */
-  .logo-sub {
-    color: #9ca3af;
-  }
+  body { background: #1a1a2e; }
+  .content-card { background: #2d2d44; border-color: #3a3a5a; }
+  .breadcrumb { background: #25253a; border-bottom-color: #3a3a5a; }
+  .breadcrumb a { color: #a0aec0; }
+  .breadcrumb a:hover { color: #e2e8f0; }
+  .content h1 { color: #e2e8f0; border-bottom-color: #3a3a5a; }
+  .content h2 { color: #e2e8f0; border-left-color: #a0aec0; }
+  .content h3 { color: #cbd5e0; }
+  .content p, .content li { color: #cbd5e0; }
+  .content blockquote { background: #25253a; color: #a0aec0; }
+  .content code { background: #25253a; color: #fc8181; }
+  .content pre { background: #0f0f1a; }
+  .content table { border-color: #3a3a5a; }
+  .content th { background: #25253a; color: #e2e8f0; border-bottom-color: #3a3a5a; }
+  .content td { border-bottom-color: #3a3a5a; color: #cbd5e0; }
+  .content hr { background: #3a3a5a; }
+  .content a { color: #a0aec0; border-bottom-color: #4a5568; }
+  .content a:hover { border-bottom-color: #a0aec0; }
+  .related { border-top-color: #3a3a5a; }
+  .related-title { color: #888; }
+  .related-link { background: #25253a; color: #cbd5e0; }
+  .related-link:hover { background: #3a3a5a; }
+  .updated { border-top-color: #3a3a5a; color: #666; }
+  .site-footer { border-top-color: #3a3a5a; background: #1a1a2e; }
+  .footer-links a { color: #9ca3af; }
+  .footer-links a:hover { color: #e2e8f0; }
+  .footer-info { color: #6b7280; }
+  .footer-info a { color: #9ca3af; }
+  .footer-info a:hover { color: #e2e8f0; }
+  .back-link a { color: #888; }
+  .back-link a:hover { color: #e2e8f0; }
+  .logo-sub { color: #9ca3af; }
 }
-
-/* ========== レスポンシブ対応（スマホ） ========== */
 @media (max-width: 768px) {
-  .main {
-    padding: 1rem;
-  }
-
-  .content {
-    padding: 1.25rem;
-  }
-
-  .breadcrumb {
-    padding: 0.75rem 1.25rem;
-  }
-
-  .back-link {
-    padding: 0.75rem 1.25rem 0 1.25rem;
-  }
-
-  .content h1 {
-    font-size: 1.4rem;
-  }
-
-  .content h2 {
-    font-size: 1.2rem;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo a {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-  }
-
-  .nav-link.discord {
-    padding: 0.3rem 0.8rem;
-  }
-
-  .related-list {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .related-link {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* スマホで画像ロゴを少し小さく */
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo-main {
-    font-size: 0.95rem;
-  }
-
-  .logo-sub {
-    font-size: 0.55rem;
-  }
-
-  /* フッターリンクを縦並びに */
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
+  .main { padding: 1rem; }
+  .content { padding: 1.25rem; }
+  .breadcrumb { padding: 0.75rem 1.25rem; }
+  .back-link { padding: 0.75rem 1.25rem 0 1.25rem; }
+  .content h1 { font-size: 1.4rem; }
+  .content h2 { font-size: 1.2rem; }
+  .header-inner { flex-direction: column; text-align: center; }
+  .logo a { justify-content: center; }
+  .nav-links { justify-content: center; gap: 1rem; }
+  .nav-link { font-size: 0.8rem; }
+  .nav-link.discord { padding: 0.3rem 0.8rem; }
+  .related-list { flex-direction: column; gap: 0.5rem; }
+  .related-link { display: flex; justify-content: center; }
+  .logo-icon { width: 28px; height: 28px; }
+  .logo-main { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.55rem; }
+  .footer-links { flex-direction: column; gap: 0.5rem; align-items: center; }
 }
-
-/* ========== 印刷用スタイル ========== */
 @media print {
-  body {
-    background: white;
-  }
-
-  .site-header,
-  .breadcrumb,
-  .back-link,
-  .related,
-  .site-footer {
-    display: none;
-  }
-
-  .content-card {
-    border: none;
-  }
-
-  .content {
-    padding: 0;
-  }
-
-  .content a {
-    color: black;
-    border-bottom: none;
-  }
+  body { background: white; }
+  .site-header, .breadcrumb, .back-link, .related, .site-footer { display: none; }
+  .content-card { border: none; }
+  .content { padding: 0; }
+  .content a { color: black; border-bottom: none; }
 }
   </style>
 </head>
@@ -683,36 +385,15 @@ body {
     <div class="header-inner">
       <div class="logo">
         <a href="/">
-          <div class="logo-icon-wrapper">
-            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
-          </div>
-          <div class="logo-text">
-            <span class="logo-main">HAKONIWA Link</span>
-            <span class="logo-sub">URL Shortener</span>
-          </div>
+          <div class="logo-icon-wrapper"><img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon"></div>
+          <div class="logo-text"><span class="logo-main">HAKONIWA Link</span><span class="logo-sub">URL Shortener</span></div>
         </a>
       </div>
       <div class="nav-links">
-        <a href="/" class="nav-link active">
-            <div class="logo-icon-wrapper">
-            <img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon">
-          </div>
-         ドキュメント</a>
-        <a href="https://hknw.link" target="_blank" class="nav-link active">
-          <div class="logo-icon-wrapper">
-            <img src="/images/service_icon.png" alt="サービス" class="logo-icon">
-          </div>
-          サービス</a>
-        <a href="#準備中-github" target="_blank" class="nav-link active">
-                  <div class="logo-icon-wrapper">
-            <img src="/images/github_icon.png" alt="GitHub" class="logo-icon">
-          </div>
-          GitHub(準備中)</a>
-        <a href="#準備中-discord" target="_blank" class="nav-link active discord">
-          <div class="logo-icon-wrapper">
-            <img src="/images/discord_icon.png" alt="Discord" class="logo-icon">
-          </div>
-          Discord(準備中)</a>
+        <a href="/" class="nav-link active"><div class="logo-icon-wrapper"><img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon"></div>ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link"><div class="logo-icon-wrapper"><img src="/images/service_icon.png" alt="サービス" class="logo-icon"></div>サービス</a>
+        <a href="#" class="nav-link"><div class="logo-icon-wrapper"><img src="/images/github_icon.png" alt="GitHub" class="logo-icon"></div>GitHub(準備中)</a>
+        <a href="#" class="nav-link discord"><div class="logo-icon-wrapper"><img src="/images/discord_icon.png" alt="Discord" class="logo-icon"></div>Discord(準備中)</a>
       </div>
     </div>
   </div>
@@ -723,16 +404,9 @@ body {
     <div class="breadcrumb">
       <a href="/">ホーム</a>
       <span class="separator">›</span>
-      <a href="#docs">ドキュメント</a>
-      <span class="separator">›</span>
       <span>特定商取引法に基づく表記</span>
     </div>
-  
-      
-    <div class="back-link">
-      <a href="/">← ドキュメント一覧に戻る</a>
-    </div>
-  
+      <div class="back-link"><a href="/">← ドキュメント一覧に戻る</a></div>
       <div class="content">
         <h1>特定商取引法に基づく表記（通信販売に関する表示）</h1>
 
@@ -755,6 +429,7 @@ info@hknw.link
 （該当なし）
 
 <h2>交換および返品に関するポリシー</h2>
+
 <h3>有料プラン（Pro / ビジネス）</h3>
 <ul>
 <li>デジタルサービスの性質上、<strong>原則として返品・返金はお受けできません</strong></li>
@@ -771,6 +446,7 @@ info@hknw.link
 </ul>
 
 <h2>配達時間（サービス提供時期）</h2>
+
 <h3>有料プラン（Pro / ビジネス）</h3>
 決済完了後、即時提供
 
@@ -778,6 +454,7 @@ info@hknw.link
 案件内容により個別にご相談の上決定
 
 <h2>利用可能な決済手段</h2>
+
 <h3>有料プラン（Pro / ビジネス）</h3>
 クレジットカード決済（予定）
 
@@ -785,6 +462,7 @@ info@hknw.link
 銀行振込
 
 <h2>決済期間</h2>
+
 <h3>有料プラン（Pro / ビジネス）</h3>
 毎月の請求日（前払い）
 
@@ -792,6 +470,7 @@ info@hknw.link
 契約締結後、請求書発行時
 
 <h2>価格</h2>
+
 <table>
   <thead>
     <tr>
@@ -804,23 +483,24 @@ info@hknw.link
       <td>Freeプラン</td>
       <td>0円</td>
       <td>-</td>
-    </tr>
+    </td>
     <tr>
       <td>Proプラン</td>
       <td>1,000円</td>
       <td>月次</td>
-    </tr>
+    </td>
     <tr>
       <td>ビジネスプラン</td>
       <td>5,000円</td>
       <td>月次</td>
-    </tr>
+    </td>
   </tbody>
 </table>
 
 <p>※価格は予告なく変更する場合があります。変更後の価格は本サービス上での掲載をもって効力を生じます。</p>
 
 <h2>動作環境</h2>
+
 <h3>OS / 推奨ブラウザ</h3>
 <ul>
 <li>Windows / Mac: Google Chrome（最新版）、Firefox（最新版）、Safari（最新版）</li>
@@ -830,6 +510,7 @@ info@hknw.link
 <p>※JavaScriptが有効である必要があります。また一部ブラウザおよび動作環境では表記が崩れる場合があります</p>
 
 <h2>お問い合わせ窓口</h2>
+
 <ul>
 <li>特商法表示に関する問い合わせ: legal@hknw.link</li>
 <li>広告掲載に関する問い合わせ: ad@hknw.link</li>
@@ -842,40 +523,22 @@ info@hknw.link
 
 <hr>
 
-<p>制定日: 2026年4月22日<br></p>
+<p><strong>制定日: 2026年4月22日</strong></p>
         <div class="updated">最終更新日: 2026-04-26</div>
         
     <div class="related">
       <h3 class="related-title">関連ドキュメント</h3>
       <div class="related-list">
-        
-          <a href="/docs/terms" class="related-link">
-            <span>📋</span>
-            <span>利用規約</span>
-          </a>
-        
-          <a href="/docs/disclaimer" class="related-link">
-            <span>⚠️</span>
-            <span>免責事項</span>
-          </a>
-        
-          <a href="/docs/privacy" class="related-link">
-            <span>🔒</span>
-            <span>プライバシーポリシー</span>
-          </a>
-        
+        <a href="/docs/terms" class="related-link"><span>📋</span><span>利用規約</span></a><a href="/docs/disclaimer" class="related-link"><span>⚠️</span><span>免責事項</span></a><a href="/docs/privacy" class="related-link"><span>🔒</span><span>プライバシーポリシー</span></a>
       </div>
     </div>
-  
       </div>
     </div>
   </div>
   
   <div class="site-footer">
     <div class="footer-nav">
-      <div class="footer-links">
-        <a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a>
-      </div>
+      <div class="footer-links"><a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a></div>
       <div class="footer-links">
         <a href="/docs/terms">📋 利用規約</a>
         <a href="/docs/disclaimer">⚠️ 免責事項</a>
@@ -889,10 +552,7 @@ info@hknw.link
     </div>
     <div class="footer-info">
       <p>© 2026 HAKONIWA Studio All Rights Reserved.<br>Designed and Developed by HAKONIWA Studio.</p>
-      <p>
-        <a href="mailto:legal@hknw.link">legal@hknw.link</a> | 
-        <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
-      </p>
+      <p><a href="mailto:legal@hknw.link">legal@hknw.link</a> | <a href="mailto:abuse@hknw.link">abuse@hknw.link</a></p>
     </div>
   </div>
 </body>

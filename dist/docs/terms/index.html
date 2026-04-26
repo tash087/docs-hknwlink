@@ -9,26 +9,15 @@
   <title>利用規約 | HAKONIWA Link</title>
   <style>
  /* ============================================================
-   個別ドキュメントページ用スタイル（画像ロゴ対応版）
-   - 利用規約、プライバシーポリシーなどの本文表示用
+   個別ドキュメントページ用スタイル
    ============================================================ */
-
-/* リセット */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ベース設定 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   background: #f5f5f7;
   color: #1a1a2e;
   line-height: 1.7;
 }
-
-/* ========== ヘッダー（共通・画像ロゴ対応） ========== */
 .site-header {
   background: #2c2c2e;
   border-bottom: 1px solid #3a3a3c;
@@ -36,7 +25,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .header-inner {
   max-width: 1000px;
   margin: 0 auto;
@@ -47,59 +35,46 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-/* ロゴエリア（画像 + テキスト） */
 .logo a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
 }
-
-/* 画像ロゴ用ラッパー */
 .logo-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-
-/* 画像ロゴそのもの */
 .logo-icon {
   width: 36px;
   height: 36px;
   display: block;
   object-fit: contain;
 }
-
-/* テキストロゴ（メイン＋サブ） */
 .logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1.3;
 }
-
 .logo-main {
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
   letter-spacing: 0.5px;
 }
-
 .logo-sub {
   font-size: 0.65rem;
   color: #a0aec0;
   letter-spacing: 0.3px;
 }
-
-/* ナビゲーションリンク（全共通） */
 .nav-links {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .nav-link {
   color: #cbd5e0;
   text-decoration: none;
@@ -107,46 +82,29 @@ body {
   transition: color 0.2s;
   padding: 0.5rem 0;
 }
-
-.nav-link:hover {
-  color: white;
-}
-
-/* アクティブなリンク（現在地を示す） */
+.nav-link:hover { color: white; }
 .nav-link.active {
   color: white;
   border-bottom: 2px solid white;
 }
-
-/* Discord専用ボタンスタイル（任意） */
 .nav-link.discord {
   background: #5865f2;
   padding: 0.4rem 1rem;
   border-radius: 8px;
   color: white;
 }
-
-.nav-link.discord:hover {
-  background: #4752c4;
-  color: white;
-}
-
-/* ========== メインコンテンツエリア ========== */
+.nav-link.discord:hover { background: #4752c4; }
 .main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
-
-/* コンテンツカード */
 .content-card {
   background: white;
   border-radius: 12px;
   border: 1px solid #e8e8ec;
   overflow: hidden;
 }
-
-/* ========== パンくずリスト ========== */
 .breadcrumb {
   padding: 1rem 2rem;
   background: #fafafc;
@@ -154,44 +112,29 @@ body {
   font-size: 0.85rem;
   color: #888;
 }
-
 .breadcrumb a {
   color: #666;
   text-decoration: none;
 }
-
 .breadcrumb a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
 .breadcrumb .separator {
   margin: 0 0.5rem;
   color: #ccc;
 }
-
-/* ========== 戻るリンク ========== */
 .back-link {
   padding: 1rem 2rem 0 2rem;
 }
-
 .back-link a {
   display: inline-block;
   color: #888;
   text-decoration: none;
   font-size: 0.85rem;
 }
-
-.back-link a:hover {
-  color: #2c2c2e;
-}
-
-/* ========== 本文コンテンツ ========== */
-.content {
-  padding: 2rem;
-}
-
-/* 見出し */
+.back-link a:hover { color: #2c2c2e; }
+.content { padding: 2rem; }
 .content h1 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -200,7 +143,6 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #e8e8ec;
 }
-
 .content h2 {
   font-size: 1.3rem;
   font-weight: 600;
@@ -209,40 +151,30 @@ body {
   padding-left: 0.75rem;
   border-left: 3px solid #2c2c2e;
 }
-
 .content h3 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #2c2c2e;
   margin: 1.25rem 0 0.5rem 0;
 }
-
 .content h4 {
   font-size: 1rem;
   font-weight: 600;
   color: #3a3a3e;
   margin: 1rem 0 0.5rem 0;
 }
-
-/* 段落 */
 .content p {
   margin-bottom: 1rem;
   color: #3a3a3e;
   line-height: 1.7;
 }
-
-/* リスト */
-.content ul,
-.content ol {
+.content ul, .content ol {
   margin: 0.75rem 0 1rem 1.5rem;
 }
-
 .content li {
   margin-bottom: 0.25rem;
   color: #3a3a3e;
 }
-
-/* 引用ブロック */
 .content blockquote {
   background: #f8f8fa;
   border-left: 3px solid #2c2c2e;
@@ -252,8 +184,6 @@ body {
   color: #555;
   font-size: 0.9rem;
 }
-
-/* インラインコード */
 .content code {
   background: #f0f0f4;
   padding: 0.2rem 0.4rem;
@@ -262,8 +192,6 @@ body {
   font-size: 0.85rem;
   color: #c0392b;
 }
-
-/* コードブロック */
 .content pre {
   background: #1e1e2e;
   padding: 1rem;
@@ -271,22 +199,18 @@ body {
   overflow-x: auto;
   margin: 1rem 0;
 }
-
 .content pre code {
   background: none;
   color: #e2e8f0;
   padding: 0;
   font-size: 0.85rem;
 }
-
-/* テーブル */
 .content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
   border: 1px solid #e8e8ec;
 }
-
 .content th {
   background: #f8f8fa;
   padding: 0.75rem;
@@ -294,55 +218,39 @@ body {
   font-weight: 600;
   border-bottom: 1px solid #e8e8ec;
 }
-
 .content td {
   padding: 0.75rem;
   border-bottom: 1px solid #f0f0f0;
 }
-
-.content tr:last-child td {
-  border-bottom: none;
-}
-
-/* 水平線 */
+.content tr:last-child td { border-bottom: none; }
 .content hr {
   margin: 1.5rem 0;
   border: none;
   height: 1px;
   background: #e8e8ec;
 }
-
-/* リンク */
 .content a {
   color: #2c2c2e;
   text-decoration: none;
   border-bottom: 1px solid #d0d0d0;
 }
-
-.content a:hover {
-  border-bottom-color: #2c2c2e;
-}
-
-/* ========== 関連ドキュメント ========== */
+.content a:hover { border-bottom-color: #2c2c2e; }
 .related {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #e8e8ec;
 }
-
 .related-title {
   font-size: 0.85rem;
   font-weight: 600;
   color: #888;
   margin-bottom: 0.75rem;
 }
-
 .related-list {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .related-link {
   display: inline-flex;
   align-items: center;
@@ -355,13 +263,10 @@ body {
   color: #3a3a3e;
   transition: background 0.2s;
 }
-
 .related-link:hover {
   background: #e8e8ec;
   border-bottom: none;
 }
-
-/* ========== 更新日表示 ========== */
 .updated {
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -370,8 +275,6 @@ body {
   text-align: right;
   border-top: 1px solid #e8e8ec;
 }
-
-/* ========== フッター（整理済み） ========== */
 .site-footer {
   border-top: 1px solid #e0e0e0;
   background: white;
@@ -379,7 +282,6 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -387,294 +289,94 @@ body {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 .footer-links a {
   color: #555;
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.2s;
 }
-
 .footer-links a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
 .footer-info {
   font-size: 0.75rem;
   color: #aaa;
   line-height: 1.6;
 }
-
 .footer-info a {
   color: #888;
   text-decoration: none;
 }
-
 .footer-info a:hover {
   color: #2c2c2e;
   text-decoration: underline;
 }
-
-/* ========== ダークモード対応（フル） ========== */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #1a1a2e;
-  }
-
-  .content-card {
-    background: #2d2d44;
-    border-color: #3a3a5a;
-  }
-
-  .breadcrumb {
-    background: #25253a;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .breadcrumb a {
-    color: #a0aec0;
-  }
-
-  .breadcrumb a:hover {
-    color: #e2e8f0;
-  }
-
-  .content h1 {
-    color: #e2e8f0;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .content h2 {
-    color: #e2e8f0;
-    border-left-color: #a0aec0;
-  }
-
-  .content h3 {
-    color: #cbd5e0;
-  }
-
-  .content p,
-  .content li {
-    color: #cbd5e0;
-  }
-
-  .content blockquote {
-    background: #25253a;
-    color: #a0aec0;
-  }
-
-  .content code {
-    background: #25253a;
-    color: #fc8181;
-  }
-
-  .content pre {
-    background: #0f0f1a;
-  }
-
-  .content table {
-    border-color: #3a3a5a;
-  }
-
-  .content th {
-    background: #25253a;
-    color: #e2e8f0;
-    border-bottom-color: #3a3a5a;
-  }
-
-  .content td {
-    border-bottom-color: #3a3a5a;
-    color: #cbd5e0;
-  }
-
-  .content hr {
-    background: #3a3a5a;
-  }
-
-  .content a {
-    color: #a0aec0;
-    border-bottom-color: #4a5568;
-  }
-
-  .content a:hover {
-    border-bottom-color: #a0aec0;
-  }
-
-  .related {
-    border-top-color: #3a3a5a;
-  }
-
-  .related-title {
-    color: #888;
-  }
-
-  .related-link {
-    background: #25253a;
-    color: #cbd5e0;
-  }
-
-  .related-link:hover {
-    background: #3a3a5a;
-  }
-
-  .updated {
-    border-top-color: #3a3a5a;
-    color: #666;
-  }
-
-  .site-footer {
-    border-top-color: #3a3a5a;
-    background: #1a1a2e;
-  }
-
-  .footer-links a {
-    color: #9ca3af;
-  }
-
-  .footer-links a:hover {
-    color: #e2e8f0;
-  }
-
-  .footer-info {
-    color: #6b7280;
-  }
-
-  .footer-info a {
-    color: #9ca3af;
-  }
-
-  .footer-info a:hover {
-    color: #e2e8f0;
-  }
-
-  .back-link a {
-    color: #888;
-  }
-
-  .back-link a:hover {
-    color: #e2e8f0;
-  }
-
-  /* ヘッダーダーク時補正（画像ロゴ透過推奨） */
-  .logo-sub {
-    color: #9ca3af;
-  }
+  body { background: #1a1a2e; }
+  .content-card { background: #2d2d44; border-color: #3a3a5a; }
+  .breadcrumb { background: #25253a; border-bottom-color: #3a3a5a; }
+  .breadcrumb a { color: #a0aec0; }
+  .breadcrumb a:hover { color: #e2e8f0; }
+  .content h1 { color: #e2e8f0; border-bottom-color: #3a3a5a; }
+  .content h2 { color: #e2e8f0; border-left-color: #a0aec0; }
+  .content h3 { color: #cbd5e0; }
+  .content p, .content li { color: #cbd5e0; }
+  .content blockquote { background: #25253a; color: #a0aec0; }
+  .content code { background: #25253a; color: #fc8181; }
+  .content pre { background: #0f0f1a; }
+  .content table { border-color: #3a3a5a; }
+  .content th { background: #25253a; color: #e2e8f0; border-bottom-color: #3a3a5a; }
+  .content td { border-bottom-color: #3a3a5a; color: #cbd5e0; }
+  .content hr { background: #3a3a5a; }
+  .content a { color: #a0aec0; border-bottom-color: #4a5568; }
+  .content a:hover { border-bottom-color: #a0aec0; }
+  .related { border-top-color: #3a3a5a; }
+  .related-title { color: #888; }
+  .related-link { background: #25253a; color: #cbd5e0; }
+  .related-link:hover { background: #3a3a5a; }
+  .updated { border-top-color: #3a3a5a; color: #666; }
+  .site-footer { border-top-color: #3a3a5a; background: #1a1a2e; }
+  .footer-links a { color: #9ca3af; }
+  .footer-links a:hover { color: #e2e8f0; }
+  .footer-info { color: #6b7280; }
+  .footer-info a { color: #9ca3af; }
+  .footer-info a:hover { color: #e2e8f0; }
+  .back-link a { color: #888; }
+  .back-link a:hover { color: #e2e8f0; }
+  .logo-sub { color: #9ca3af; }
 }
-
-/* ========== レスポンシブ対応（スマホ） ========== */
 @media (max-width: 768px) {
-  .main {
-    padding: 1rem;
-  }
-
-  .content {
-    padding: 1.25rem;
-  }
-
-  .breadcrumb {
-    padding: 0.75rem 1.25rem;
-  }
-
-  .back-link {
-    padding: 0.75rem 1.25rem 0 1.25rem;
-  }
-
-  .content h1 {
-    font-size: 1.4rem;
-  }
-
-  .content h2 {
-    font-size: 1.2rem;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo a {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-  }
-
-  .nav-link.discord {
-    padding: 0.3rem 0.8rem;
-  }
-
-  .related-list {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .related-link {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* スマホで画像ロゴを少し小さく */
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo-main {
-    font-size: 0.95rem;
-  }
-
-  .logo-sub {
-    font-size: 0.55rem;
-  }
-
-  /* フッターリンクを縦並びに */
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
+  .main { padding: 1rem; }
+  .content { padding: 1.25rem; }
+  .breadcrumb { padding: 0.75rem 1.25rem; }
+  .back-link { padding: 0.75rem 1.25rem 0 1.25rem; }
+  .content h1 { font-size: 1.4rem; }
+  .content h2 { font-size: 1.2rem; }
+  .header-inner { flex-direction: column; text-align: center; }
+  .logo a { justify-content: center; }
+  .nav-links { justify-content: center; gap: 1rem; }
+  .nav-link { font-size: 0.8rem; }
+  .nav-link.discord { padding: 0.3rem 0.8rem; }
+  .related-list { flex-direction: column; gap: 0.5rem; }
+  .related-link { display: flex; justify-content: center; }
+  .logo-icon { width: 28px; height: 28px; }
+  .logo-main { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.55rem; }
+  .footer-links { flex-direction: column; gap: 0.5rem; align-items: center; }
 }
-
-/* ========== 印刷用スタイル ========== */
 @media print {
-  body {
-    background: white;
-  }
-
-  .site-header,
-  .breadcrumb,
-  .back-link,
-  .related,
-  .site-footer {
-    display: none;
-  }
-
-  .content-card {
-    border: none;
-  }
-
-  .content {
-    padding: 0;
-  }
-
-  .content a {
-    color: black;
-    border-bottom: none;
-  }
+  body { background: white; }
+  .site-header, .breadcrumb, .back-link, .related, .site-footer { display: none; }
+  .content-card { border: none; }
+  .content { padding: 0; }
+  .content a { color: black; border-bottom: none; }
 }
   </style>
 </head>
@@ -683,36 +385,15 @@ body {
     <div class="header-inner">
       <div class="logo">
         <a href="/">
-          <div class="logo-icon-wrapper">
-            <img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon">
-          </div>
-          <div class="logo-text">
-            <span class="logo-main">HAKONIWA Link</span>
-            <span class="logo-sub">URL Shortener</span>
-          </div>
+          <div class="logo-icon-wrapper"><img src="/images/hakoniwa_link_icon.png" alt="HAKONIWA Studio" class="logo-icon"></div>
+          <div class="logo-text"><span class="logo-main">HAKONIWA Link</span><span class="logo-sub">URL Shortener</span></div>
         </a>
       </div>
       <div class="nav-links">
-        <a href="/" class="nav-link active">
-            <div class="logo-icon-wrapper">
-            <img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon">
-          </div>
-         ドキュメント</a>
-        <a href="https://hknw.link" target="_blank" class="nav-link active">
-          <div class="logo-icon-wrapper">
-            <img src="/images/service_icon.png" alt="サービス" class="logo-icon">
-          </div>
-          サービス</a>
-        <a href="#準備中-github" target="_blank" class="nav-link active">
-                  <div class="logo-icon-wrapper">
-            <img src="/images/github_icon.png" alt="GitHub" class="logo-icon">
-          </div>
-          GitHub(準備中)</a>
-        <a href="#準備中-discord" target="_blank" class="nav-link active discord">
-          <div class="logo-icon-wrapper">
-            <img src="/images/discord_icon.png" alt="Discord" class="logo-icon">
-          </div>
-          Discord(準備中)</a>
+        <a href="/" class="nav-link active"><div class="logo-icon-wrapper"><img src="/images/docs_icon.png" alt="ドキュメント" class="logo-icon"></div>ドキュメント</a>
+        <a href="https://hknw.link" target="_blank" class="nav-link"><div class="logo-icon-wrapper"><img src="/images/service_icon.png" alt="サービス" class="logo-icon"></div>サービス</a>
+        <a href="#" class="nav-link"><div class="logo-icon-wrapper"><img src="/images/github_icon.png" alt="GitHub" class="logo-icon"></div>GitHub(準備中)</a>
+        <a href="#" class="nav-link discord"><div class="logo-icon-wrapper"><img src="/images/discord_icon.png" alt="Discord" class="logo-icon"></div>Discord(準備中)</a>
       </div>
     </div>
   </div>
@@ -723,16 +404,9 @@ body {
     <div class="breadcrumb">
       <a href="/">ホーム</a>
       <span class="separator">›</span>
-      <a href="#docs">ドキュメント</a>
-      <span class="separator">›</span>
       <span>利用規約</span>
     </div>
-  
-      
-    <div class="back-link">
-      <a href="/">← ドキュメント一覧に戻る</a>
-    </div>
-  
+      <div class="back-link"><a href="/">← ドキュメント一覧に戻る</a></div>
       <div class="content">
         <h1>箱庭リンク (hknw.link) 利用規約</h1>
 
@@ -767,31 +441,31 @@ body {
     <tr>
       <td><strong>「短縮URL」</strong></td>
       <td>本サービスを通じて生成された、転送先URLを指す短いURL文字列（例：https://hknw.link/abc123）</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「転送先URL」</strong></td>
       <td>ユーザーが登録したオリジナルのウェブサイトアドレス</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「ユーザー」</strong></td>
       <td>本サービスを利用して短縮URLを生成する個人または法人</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「登録ユーザー」</strong></td>
       <td>第3条に基づき、メールアドレス認証を行いアカウントを作成したユーザー</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「エンドユーザー」</strong></td>
       <td>短縮URLをクリックして転送先にアクセスする第三者</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「待機画面」</strong></td>
       <td>短縮URLクリック後に表示される、ガムテープ演出付きの中間ページ</td>
-    </tr>
+    </td>
     <tr>
       <td><strong>「禁止行為」</strong></td>
       <td>本規約第4条に定める行為</td>
-    </tr>
+    </td>
   </tbody>
 </table>
 
@@ -801,17 +475,11 @@ body {
 
 <ol>
 <li>ユーザーは、当運営指定の方法でメールアドレスを送信し、当該アドレスに送付される「認証コード」を入力することで、ログインおよびユーザー登録を行うことができます。</li>
-</ol>
-
-<ol>
 <li>本サービスは、ログインした「登録ユーザー」に対し、以下の機能を提供します：</li>
-</ol>
 <ul>
 <li><strong>データ同期</strong>: 同一メールアドレスでログインした複数デバイス間での、作成済み短縮URLリストの共有</li>
 <li><strong>統計管理</strong>: 各短縮URLの統計情報の継続的な確認</li>
 </ul>
-
-<ol>
 <li>ユーザーは、自身のメールアドレスおよび送付された認証コードを厳重に管理するものとします。第三者によるメールアドレスの不正利用等により生じた損害について、当運営は一切の責任を負いません。</li>
 </ol>
 
@@ -878,19 +546,13 @@ body {
 
 <ol>
 <li>本サービスは、短縮URLへのアクセス情報として以下を収集します：</li>
-</ol>
 <ul>
 <li>アクセス日時</li>
 <li>アクセス元の国・地域（Cloudflareの提供データに基づく）</li>
 <li>リファラー（アクセス元サイト）</li>
 <li>クリック数（総数）</li>
 </ul>
-
-<ol>
 <li><strong>登録ユーザー</strong>は、自身の管理画面から、同一メールアドレスで作成した短縮URLの統計情報を閲覧・管理できます。</li>
-</ol>
-
-<ol>
 <li>個人を特定できる情報（IPアドレス、ブラウザフィンガープリント、デバイスID、Cookieなど）は、本条の統計目的では<strong>収集しません</strong>。詳細は<a href="/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>をご参照ください。</li>
 </ol>
 
@@ -904,34 +566,63 @@ body {
   <thead>
     <tr>
       <th>プラン</th>
-      <th>価格</th>
-      <th>主な機能</th>
+      <th>価格（税込）</th>
+      <th>リダイレクト待機時間</th>
+      <th>最大リンク数</th>
+      <th>1日作成上限</th>
+      <th>広告</th>
+      <th>優先サポート</th>
+      <th>API</th>
+      <th>詳細分析</th>
     </tr>
   </thead>
     <tr>
-      <td><strong>フリープラン</strong></td>
+      <td><strong>Freeプラン</strong></td>
       <td>0円</td>
-      <td>短縮URL作成、待機画面（広アリ）、基本統計</td>
-    </tr>
+      <td>5秒</td>
+      <td>10</td>
+      <td>3個</td>
+      <td>あり</td>
+      <td>なし</td>
+      <td>なし</td>
+      <td>なし</td>
+    </td>
     <tr>
-      <td><strong>スタジオプラン</strong></td>
-      <td>別途定める</td>
-      <td>広告非表示、詳細統計、優先サポート など</td>
-    </tr>
+      <td><strong>Proプラン</strong></td>
+      <td>1,000円/月</td>
+      <td>2秒</td>
+      <td>100</td>
+      <td>20個</td>
+      <td>なし</td>
+      <td>あり</td>
+      <td>なし</td>
+      <td>なし</td>
+    </td>
+    <tr>
+      <td><strong>ビジネスプラン</strong></td>
+      <td>5,000円/月</td>
+      <td>0秒（即時）</td>
+      <td>無制限</td>
+      <td>500個</td>
+      <td>なし</td>
+      <td>あり</td>
+      <td>あり</td>
+      <td>あり</td>
+    </td>
   </tbody>
 </table>
 
-<p>※スタジオプランの詳細な価格・機能は、本サービス上にて別途表示します。</p>
+<p>※価格は予告なく変更する場合があります。変更後の価格は本サービス上での掲載をもって効力を生じます。</p>
 
 <hr>
 
 <h2>第8条 広告表示について</h2>
 
 <ol>
-<li><strong>フリープラン</strong>では、短縮URLアクセス時に「待機画面」内で広告が表示される場合があります。</li>
+<li><strong>Freeプラン</strong>では、短縮URLアクセス時に「待機画面」内で広告が表示される場合があります。</li>
+<li><strong>Proプラン</strong>および<strong>ビジネスプラン</strong>では、広告非表示オプションが提供されます。</li>
 <li>広告の内容は、当運営または提携広告主が提供するものです。当運営は広告内容について一切の責任を負いません。</li>
-<li>ユーザーは、広告表示を回避する手段（広告ブロッカー等）を使用しないことに同意するものとします。</li>
-<li><strong>スタジオプラン</strong>では、広告非表示オプションが提供されます。</li>
+<li>当運営は、広告表示を維持するため、広告ブロッカー等の使用を推奨しません。ただし、ユーザーがこれらを使用することを禁止するものではありません。</li>
 </ol>
 
 <hr>
@@ -961,7 +652,30 @@ body {
 
 <hr>
 
-<h2>第11条 規約の変更</h2>
+<h2>第11条 返金・キャンセル</h2>
+
+<ol>
+<li>有料プラン（Proプラン、ビジネスプラン）は月次サブスクリプション（定期課金）です。</li>
+<li>解約は次回請求日の前日までに、ユーザー自身が本サービス上の設定から行うものとします。</li>
+<li>デジタルサービスの性質上、<strong>既に支払われた月額料金の返金は原則としてお受けできません</strong>（日割り計算による返金も行いません）。</li>
+<li>無料トライアル期間中に解約された場合、課金は発生しません。</li>
+<li>解約後はFreeプランに移行します。</li>
+</ol>
+
+<hr>
+
+<h2>第12条 免責事項</h2>
+
+<ol>
+<li>当運営は、転送先URLの内容について一切の責任を負いません。</li>
+<li>ユーザーが第4条（禁止行為）に違反したことにより生じたいかなる損害についても、当運営は責任を負いません。</li>
+<li>本サービスは「現状有姿（AS-IS）」で提供され、当運営はその完全性、正確性、安全性、特定目的への適合性を保証しません。</li>
+<li>当運営は、サーバーダウン、ネットワーク障害、第三者による攻撃などにより本サービスが利用できなくなった場合でも、これにより生じた損害について責任を負いません。</li>
+</ol>
+
+<hr>
+
+<h2>第13条 規約の変更</h2>
 
 <ol>
 <li>当運営は、必要に応じて本規約を変更できるものとします。</li>
@@ -972,7 +686,7 @@ body {
 
 <hr>
 
-<h2>第12条 準拠法と管轄裁判所</h2>
+<h2>第14条 準拠法と管轄裁判所</h2>
 
 <ol>
 <li>本規約の解釈および適用は、<strong>日本法</strong>に準拠するものとします。</li>
@@ -981,7 +695,7 @@ body {
 
 <hr>
 
-<h2>第13条 連絡方法</h2>
+<h2>第15条 連絡方法</h2>
 
 <p>ユーザーから当運営への連絡は、以下のメールアドレスにて受け付けます。</p>
 
@@ -995,15 +709,15 @@ body {
     <tr>
       <td>一般のお問い合わせ</td>
       <td>info@hknw.link</td>
-    </tr>
+    </td>
     <tr>
       <td>法的な通知・権利侵害の申告</td>
       <td>legal@hknw.link</td>
-    </tr>
+    </td>
     <tr>
       <td>禁止行為の通報</td>
       <td>abuse@hknw.link</td>
-    </tr>
+    </td>
   </tbody>
 </table>
 
@@ -1011,46 +725,28 @@ body {
 
 <hr>
 
-<h2>第14条 分離可能性</h2>
+<h2>第16条 分離可能性</h2>
 
 <p>本規約のいずれかの条項が法令により無効または執行不能と判断された場合でも、その他の条項は引き続き完全な効力を有するものとします。</p>
 
 <hr>
 
-<p>制定日：2026/04/22<br></p>
+<p><strong>制定日：2026年4月22日</strong></p>
         <div class="updated">最終更新日: 2026-04-23</div>
         
     <div class="related">
       <h3 class="related-title">関連ドキュメント</h3>
       <div class="related-list">
-        
-          <a href="/docs/tokushoho" class="related-link">
-            <span>🏪</span>
-            <span>特定商取引法に基づく表記</span>
-          </a>
-        
-          <a href="/docs/disclaimer" class="related-link">
-            <span>⚠️</span>
-            <span>免責事項</span>
-          </a>
-        
-          <a href="/docs/privacy" class="related-link">
-            <span>🔒</span>
-            <span>プライバシーポリシー</span>
-          </a>
-        
+        <a href="/docs/tokushoho" class="related-link"><span>🏪</span><span>特定商取引法に基づく表記</span></a><a href="/docs/disclaimer" class="related-link"><span>⚠️</span><span>免責事項</span></a><a href="/docs/privacy" class="related-link"><span>🔒</span><span>プライバシーポリシー</span></a>
       </div>
     </div>
-  
       </div>
     </div>
   </div>
   
   <div class="site-footer">
     <div class="footer-nav">
-      <div class="footer-links">
-        <a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a>
-      </div>
+      <div class="footer-links"><a href="/docs/tokushoho">📋 特定商取引法に基づく表記</a></div>
       <div class="footer-links">
         <a href="/docs/terms">📋 利用規約</a>
         <a href="/docs/disclaimer">⚠️ 免責事項</a>
@@ -1064,10 +760,7 @@ body {
     </div>
     <div class="footer-info">
       <p>© 2026 HAKONIWA Studio All Rights Reserved.<br>Designed and Developed by HAKONIWA Studio.</p>
-      <p>
-        <a href="mailto:legal@hknw.link">legal@hknw.link</a> | 
-        <a href="mailto:abuse@hknw.link">abuse@hknw.link</a>
-      </p>
+      <p><a href="mailto:legal@hknw.link">legal@hknw.link</a> | <a href="mailto:abuse@hknw.link">abuse@hknw.link</a></p>
     </div>
   </div>
 </body>
