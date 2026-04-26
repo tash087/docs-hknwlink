@@ -1,32 +1,6 @@
-# 依存関係（絶対にコミットしない）
 node_modules/
-package-lock.json
-
-# ビルド出力
 dist/
-
-# OSゴミ
 .DS_Store
-Thumbs.db
-
-# ログ
 *.log
-npm-debug.log*
-
-# 環境変数
 .env
-.env.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# キャッシュ
-.cache/
-.parcel-cache/
-
-# 一時ファイル
-*.tmp
-*.temp
+EOF

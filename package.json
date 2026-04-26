@@ -8,5 +8,21 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0"
-  }
+  },
+  "description": "箱庭リンク（hknw.link）の公式ドキュメントサイトです。",
+  "main": "build.js",
+  "dependencies": {
+    "undici-types": "^6.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tash087/docs-hknwlink.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tash087/docs-hknwlink/issues"
+  },
+  "homepage": "https://github.com/tash087/docs-hknwlink#readme"
 }
