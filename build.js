@@ -1877,23 +1877,23 @@ function convertTableToHtml(rows) {
 // ★★★ 修正済み processLists 関数（ネストされたリストを正しく処理） ★★★
 function processLists(text) {
     const lines = text.split(/\r?\n/);
-    const stack = [];      // 要素: { type: 'ol'/'ul', indent: number, liOpened: boolean }
+    const stack = []; // 開いている親リスト情報を管理
     const result = [];
+    let inList = false;
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
         if (line.trim() === '') {
-            // 空行 → 全てのリストを閉じる
+            // 空行: すべてのリストを終了
             while (stack.length) {
-                const frame = stack.pop();
-                if (frame.liOpened) result.push('</li>');
-                result.push(`</${frame.type}>`);
+                const { type } = stack.pop();
+                result.push(`</li></${type}>`);
             }
+            inList = false;
             result.push('');
             continue;
         }
 
-        // インデント（スペース2個で1レベルと仮定）
         const leadingSpaces = line.match(/^ +/)?.[0].length || 0;
         const indentLevel = Math.floor(leadingSpaces / 2);
         const trimmed = line.trim();
@@ -1905,52 +1905,50 @@ function processLists(text) {
             const content = isOrdered ? orderedMatch[2] : unorderedMatch[1];
             const currentType = isOrdered ? 'ol' : 'ul';
 
-            // 1) 現在の深さより深いリストをすべて閉じる
-            while (stack.length > 0 && stack[stack.length - 1].indent > indentLevel) {
-                const frame = stack.pop();
-                if (frame.liOpened) result.push('</li>');
-                result.push(`</${frame.type}>`);
+            // 現在の深さより深いリストをすべて閉じる
+            while (stack.length > 0 && stack[stack.length - 1].indent >= indentLevel) {
+                const { type } = stack.pop();
+                result.push(`</li></${type}>`);
             }
 
-            // 2) 同じ深さでタイプが異なる場合、ひとつ前を閉じて新しいタイプを開始
-            if (stack.length > 0 && stack[stack.length - 1].indent === indentLevel && stack[stack.length - 1].type !== currentType) {
-                const frame = stack.pop();
-                if (frame.liOpened) result.push('</li>');
-                result.push(`</${frame.type}>`);
-            }
-
-            // 3) 同じ深さ・同じタイプの継続か、新規リスト開始かを判定
-            if (stack.length > 0 && stack[stack.length - 1].indent === indentLevel && stack[stack.length - 1].type === currentType) {
-                // 同じリスト内の次のアイテム → 前のliを閉じて新しいliを開く
-                result.push('</li>');
-                result.push(`<li>${content}`);
-                stack[stack.length - 1].liOpened = true;
-            } else {
-                // 新しいリストを開始する場合、親があればそのliを開く
-                if (stack.length > 0 && stack[stack.length - 1].indent < indentLevel && !stack[stack.length - 1].liOpened) {
-                    result.push(`<li>`);
-                    stack[stack.length - 1].liOpened = true;
+            // 同じ階層で新しいリストタイプなら、直前のアイテムを閉じて新規開始
+            if (stack.length === 0 || stack[stack.length - 1].indent < indentLevel) {
+                // 親があれば、親のliを閉じる前に子リストを開く準備
+                if (stack.length > 0 && !stack[stack.length - 1].childOpened) {
+                    // ここでは何もしない（子リストはこれから）
                 }
                 result.push(`<${currentType}>`);
+                stack.push({ type: currentType, indent: indentLevel, childOpened: false });
                 result.push(`<li>${content}`);
-                stack.push({ type: currentType, indent: indentLevel, liOpened: true });
+            } 
+            else if (stack[stack.length - 1].type === currentType) {
+                // 同じタイプの次のアイテム
+                result.push(`</li><li>${content}`);
+            } 
+            else {
+                // 異なるタイプ（例: ol → ul）: 一旦閉じて新しいタイプ開始
+                const { type } = stack.pop();
+                result.push(`</li></${type}>`);
+                result.push(`<${currentType}>`);
+                stack.push({ type: currentType, indent: indentLevel, childOpened: false });
+                result.push(`<li>${content}`);
             }
         } else {
-            // リストでない行 → 全てのリストを閉じてからその行を出力
+            // リスト外テキスト: リストをすべて閉じる
             while (stack.length) {
-                const frame = stack.pop();
-                if (frame.liOpened) result.push('</li>');
-                result.push(`</${frame.type}>`);
+                const { type } = stack.pop();
+                result.push(`</li></${type}>`);
             }
+            inList = false;
             result.push(line);
         }
     }
-    // ファイル末尾で未閉じのリストを全て閉じる
+
     while (stack.length) {
-        const frame = stack.pop();
-        if (frame.liOpened) result.push('</li>');
-        result.push(`</${frame.type}>`);
+        const { type } = stack.pop();
+        result.push(`</li></${type}>`);
     }
+
     return result.join('\n');
 }
 
