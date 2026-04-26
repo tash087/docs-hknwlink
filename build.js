@@ -35,7 +35,7 @@ const documents = [
         description: '特定商取引法第11条に基づく法定表記です。運営者情報、価格、支払方法などを掲載しています。',
         icon: '🏪',
         order: 2,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-04-26'
     },
     {
         id: 'disclaimer',
