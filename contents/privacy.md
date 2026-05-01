@@ -1,6 +1,6 @@
 # 箱庭リンク (hknw.link) プライバシーポリシー
 
-[英語はこちら](/en/privacy)
+[English is Here!](/privacy_en)
 
 ## 運営者
 箱庭スタジオ（HAKONIWA Studio）
