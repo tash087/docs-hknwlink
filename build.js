@@ -21,7 +21,7 @@ const documents = [
         description: '箱庭リンク（hknw.link）の利用規約です。サービスの利用条件、禁止行為、利用停止などについて定めています。',
         icon: '📋',
         order: 1,
-        updatedAt: '2026-04-26'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'tokushoho',
@@ -34,7 +34,7 @@ const documents = [
         description: '特定商取引法第11条に基づく法定表記です。運営者情報、価格、支払方法などを掲載しています。',
         icon: '🏪',
         order: 2,
-        updatedAt: '2026-04-27'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'disclaimer',
@@ -47,7 +47,7 @@ const documents = [
         description: '箱庭リンクの免責事項です。転送先URLの内容、エンドユーザーの損害、サービスの安定性などに関する免責を定めています。',
         icon: '⚠️',
         order: 3,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'privacy',
@@ -60,7 +60,7 @@ const documents = [
         description: '個人情報の取り扱いについての方針です。収集する情報、収集しない情報、保存期間、第三者提供などを定めています。',
         icon: '🔒',
         order: 4,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'terms_en',
@@ -73,7 +73,7 @@ const documents = [
         description: 'Terms of Service for Hakoniwa Link (hknw.link) URL shortening service.',
         icon: '📋',
         order: 1,
-        updatedAt: '2026-04-26'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'privacy_en',
@@ -86,7 +86,7 @@ const documents = [
         description: 'Privacy policy for Hakoniwa Link (hknw.link). Information collection, retention, and data handling.',
         icon: '🔒',
         order: 2,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-05-02'
     },
     {
         id: 'disclaimer_en',
@@ -99,7 +99,7 @@ const documents = [
         description: 'Disclaimer for Hakoniwa Link (hknw.link). Limitation of liability and risk disclosure.',
         icon: '⚠️',
         order: 3,
-        updatedAt: '2026-04-23'
+        updatedAt: '2026-05-02'
     },
 ];
 

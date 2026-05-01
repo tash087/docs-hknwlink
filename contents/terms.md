@@ -1,6 +1,6 @@
 # 箱庭リンク (hknw.link) 利用規約
 
-[English is Here!](/terms_en)
+[English is Here!](/docs/terms_en)
 
 ## 運営者
 箱庭スタジオ（HAKONIWA Studio）

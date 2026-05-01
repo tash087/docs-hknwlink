@@ -2,7 +2,7 @@
 This is the English version of the terms of use.
 Please refer to the Japanese version if possible.
 Versions in other languages may not be up to date.
-[Japanese version here](/terms)
+[Japanese version here](/docs/terms)
 
 ## Operator
 HAKONIWA Studio
